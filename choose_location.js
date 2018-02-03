@@ -3,6 +3,8 @@ var user_location = null;
 var msg = "Where are you working? Enter 'sherman' or 'library'.";
 
 function select(ips) {
+    console.log(ips);
+
     for (var ip in ips) {
         console.log("IP: " + ip);
         if (!ips.hasOwnProperty(ip))
