@@ -8,9 +8,10 @@
     "content_scripts": [
         {
             "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl?*"
+                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl?*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl?*"
             ],
-            "js": [ 
+            "js": [
                 "selector.js"
             ],
             "run_at": "document_end"
@@ -18,7 +19,8 @@
 
         {
             "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*"
+                "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
             ],
             "js": [
                 "choose_location.js"
