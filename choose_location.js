@@ -4,8 +4,10 @@ var msg = "Where are you working? Enter 'sherman' or 'library'.";
 
 function select(ips) {
     for (var ip in ips) {
+        console.log("IP: " + ip);
         if (!ips.hasOwnProperty(ip))
             continue;
+        console.log("Tested!");
 
         if (ip.startsWith("129.105.22")) {
             user_location = "library";
