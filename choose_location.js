@@ -63,7 +63,11 @@ function getLocalIPs(callback) {
     }, function onerror() {});
 }
 
-getLocalIPs(select);
+function eko(ips) {
+    console.log(ips);
+}
+
+getLocalIPs(eko);
 
 // save to chrome storage -- note this overwrites previous value,
 // which handles the user working in different locations
