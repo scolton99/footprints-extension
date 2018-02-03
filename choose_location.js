@@ -25,6 +25,14 @@ function select(ips) {
             }
         }
     }
+
+    // save to chrome storage -- note this overwrites previous value,
+    // which handles the user working in different locations
+    chrome.storage.local.set({
+        "location" : user_location
+    }, function(result) {
+        console.log("Set location to", user_location);
+    });
 }
 
 // Taken from https://stackoverflow.com/questions/18572365/get-local-ip-of-a-device-in-chrome-extension
@@ -60,10 +68,3 @@ function getLocalIPs(callback) {
 
 getLocalIPs(select);
 
-// save to chrome storage -- note this overwrites previous value,
-// which handles the user working in different locations
-chrome.storage.local.set({
-    "location" : user_location
-}, function(result) {
-    console.log("Set location to", user_location);
-});
