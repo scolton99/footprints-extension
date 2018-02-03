@@ -3,18 +3,13 @@ var user_location = null;
 var msg = "Where are you working? Enter 'sherman' or 'library'.";
 
 function select(ips) {
-    console.log(ips);
+    for (var i = 0; i < ips.length; i++) {
+        console.log("IP: " + ips[i]);
 
-    for (var ip in ips) {
-        console.log("IP: " + ip);
-        if (!ips.hasOwnProperty(ip))
-            continue;
-        console.log("Tested!");
-
-        if (ip.startsWith("129.105.22")) {
+        if (ips[i].startsWith("129.105.22")) {
             user_location = "library";
             break;
-        } else if (ip.startsWith("129.105.188")) {
+        } else if (ips[i].startsWith("129.105.188")) {
             user_location = "sherman";
             break;
         }
@@ -63,11 +58,7 @@ function getLocalIPs(callback) {
     }, function onerror() {});
 }
 
-function eko(ips) {
-    console.log(ips);
-}
-
-getLocalIPs(eko);
+getLocalIPs(select);
 
 // save to chrome storage -- note this overwrites previous value,
 // which handles the user working in different locations
