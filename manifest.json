@@ -14,11 +14,20 @@
                 "selector.js"
             ],
             "run_at": "document_end"
+        },
+
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*"
+            ],
+            "js": [
+                "choose_location.js"
+            ],
+            "run_at": "document_end"
         }
     ],
 
     "permissions": [
-        "activeTab",
         "storage"
     ]
 }
