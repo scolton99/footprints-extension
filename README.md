@@ -4,7 +4,7 @@ A Chrome extension written for Northwestern IT to auto-select the Walk-In Locati
 ## About
 This extension was developed out of laziness and forgetfulness. While at work, I frequently forgot to select the Walk-In Location field, and we are unable to make it mandatory, so I took matters into my own hands.
 
-This prompts a user for their location, either `library` or `sherman`, whenever they are on the FootPrints login screen. It then saves that to Chrome storage, and uses it to automatically populate the Walk-In Location field when editing tickets.
+This auto-detects your location as either the Library or Sherman based on the IP address of your computer. If your location cannot be determined, it asks for it on the Footprints login screen. This is saved to Chrome storage, and the extension then automatically populates the Walk-In Location field when editing tickets.
 
 ## Installation
 1. Click the green "Clone or download" button, then Download ZIP.
@@ -15,3 +15,6 @@ This prompts a user for their location, either `library` or `sherman`, whenever 
 6. Select the directory you just created.
 
 That should be all you need to get started. Please email me with any questions or bug reports.
+
+## Acknowledgements
+Thank you to [@pavilion99](https://github.com/pavilion99) for your contributions.
