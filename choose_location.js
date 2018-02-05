@@ -28,7 +28,7 @@ function select(ips) {
 
     // save to chrome storage -- note this overwrites previous value,
     // which handles the user working in different locations
-    chrome.storage.local.set({
+    browser.storage.local.set({
         "location" : user_location
     }, function(result) {
         console.log("Set location to", user_location);
