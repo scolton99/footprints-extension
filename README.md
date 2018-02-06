@@ -1,5 +1,5 @@
 # footprints-selector
-A Chrome extension written for Northwestern IT to auto-select the Walk-In Location field on Footprints.
+A browser extension written for Northwestern IT to auto-select the Walk-In Location field on Footprints.
 
 ## About
 This extension was developed out of laziness and forgetfulness. While at work, I frequently forgot to select the Walk-In Location field, and we are unable to make it mandatory, so I took matters into my own hands.
@@ -15,6 +15,8 @@ This auto-detects your location as either the Library or Sherman based on the IP
 5. Click "Load unpacked extension ..." to pop up a file-selection dialog.
 6. Select the directory you just created.
 
+If you are already logged into Footprints, please log out and log back in for this to take effect.
+
 ### Firefox
 1. Click the green "Clone or download" button, then Download ZIP.
 2. Unzip the repository somewhere.
@@ -22,6 +24,8 @@ This auto-detects your location as either the Library or Sherman based on the IP
 4. Ensure that the "Enable add-on debugging" checkbox in the top left is checked.
 5. Click "Load Temporary Add-on" to pop up a file-selection dialog.
 6. Select _any file_ (```selector.js```, ```choose_location.js```, etc.) in the directory you just created.
+
+If you are already logged into Footprints, please log out and log back in for this to take effect.
 
 That should be all you need to get started. Please email me with any questions or bug reports.
 
