@@ -6,6 +6,8 @@ This extension was developed out of laziness and forgetfulness. While at work, I
 
 This auto-detects your location as either the Library or Sherman based on the IP address of your computer. If your location cannot be determined, it asks for it on the Footprints login screen. This is saved to Chrome storage, and the extension then automatically populates the Walk-In Location field when editing tickets.
 
+**April 23, 2018** - We updated the Northwestern IT splash page ("CONWEB") to include a banner telling consultants to use this. The newest version of the extension removes that banner.
+
 ## Installation
 ### Chrome
 1. Click the green "Clone or download" button, then Download ZIP.
