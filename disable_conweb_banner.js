@@ -1,3 +1,3 @@
-// find the fp banner, set to 0 height
-var banner = document.getElementsByName("fpExtensionDiv")[0];
-banner.setAttribute("style", "height:0px");
+// find the fp banner, set to display none
+var banner = document.getElementById("fpExtensionDiv");
+banner.style.display = 'none';
