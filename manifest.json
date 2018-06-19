@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Footprints Selector",
-    "version": "1.0",
+    "version": "1.1",
     "author": "Tushar Chandra",
     "description": "Auto-selects the Location field in Footprints ticket windows.",
 

@@ -5,7 +5,8 @@ var dropdown = document.getElementsByName("Walk__uin__bLocation")[0];
 var fpLocation;
 var locations = {
     "library": "TSC__b__u__bLibrary",
-    "sherman": "TSC__b__u__bSherman"
+    "sherman": "TSC__b__u__bSherman",
+	"infocommons": "Info__bCommons"
 }
 
 // get from local storage, get the footprints readable value, then
@@ -13,16 +14,5 @@ var locations = {
 var userInput = chrome.storage.local.get("location", function(storedLocation) {
     storedLocation = storedLocation["location"];
     fpLocation = locations[storedLocation];    
-    setMenu(dropdown, fpLocation);
+    dropdown.value = fpLocation;
 });
-
-// set a given menu with a certain value
-function setMenu(menu, targetValue) {
-    var opt;
-    for (var j = 0; opt = menu.options[j]; j++) {
-       if (opt.value === targetValue) {
-           menu.selectedIndex = j;
-           break;
-       }
-   }
-}
