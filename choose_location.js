@@ -1,6 +1,6 @@
 // ask user where they are, must be either "library" or "sherman"
 var user_location = null;
-var msg = "Where are you working? Enter 'sherman' or 'library'.";
+var msg = "Where are you working? Enter 'sherman', 'library', or 'infocommons'.";
 
 function select(ips) {
     for (var i = 0; i < ips.length; i++) {
@@ -9,6 +9,8 @@ function select(ips) {
         if (ips[i].startsWith("129.105.22")) {
             user_location = "library";
             break;
+		} else if (ips[i].startsWith("129.105.29") || ips[i].startsWith("129.105.104")) {
+			user_location = "infocommons";
         } else if (ips[i].startsWith("129.105.188")) {
             user_location = "sherman";
             break;
@@ -18,10 +20,10 @@ function select(ips) {
     if (user_location == null) {
         while (true) {
             user_location = window.prompt(msg);
-            if (user_location === "sherman" || user_location === "library") {
+            if (user_location === "sherman" || user_location === "library" || user_location === "infocommons") {
                 break;
             } else {
-                msg = "Invalid location supplied. Enter 'sherman' or 'library'."
+                msg = "Invalid location supplied. Enter 'sherman', 'library', or 'infocommons'."
             }
         }
     }

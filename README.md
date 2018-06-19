@@ -2,8 +2,7 @@
 A Chrome extension written for Northwestern IT to auto-select the Location field on Footprints.
 
 ## About
-This extension auto-detects your location as either the Library or 1800 Sherman based on the IP address of your computer. If your location cannot be determined, it asks for it on the Footprints login screen. This is saved to Chrome storage, and the extension then automatically populates the Location field when editing tickets.
-
+This auto-detects your location as Library, Sherman, or Infocommons based on the IP address of your computer. If your location cannot be determined, it asks for it on the Footprints login screen. This is saved to Chrome storage, and the extension then automatically populates the Walk-In Location field when editing tickets.
 **April 23, 2018** - We updated the Northwestern IT splash page ("CONWEB") to include a banner telling consultants to use this. The newest version of the extension removes that banner.
 
 ## Installation
