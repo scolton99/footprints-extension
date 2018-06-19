@@ -8,8 +8,8 @@
     "content_scripts": [
         {
             "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl?*",
-                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl?*"
+                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
             ],
             "js": [
                 "selector.js"
@@ -24,6 +24,16 @@
             ],
             "js": [
                 "choose_location.js"
+            ],
+            "run_at": "document_end"
+        },
+
+        {
+            "matches": [
+                "https://kb.northwestern.edu/internal/conweb"
+            ],
+            "js": [
+                "disable_conweb_banner.js"
             ],
             "run_at": "document_end"
         }
