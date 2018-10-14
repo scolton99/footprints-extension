@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Footprints Improver",
-    "version": "2.0",
+    "version": "2.1",
     "author": "Tushar Chandra, Spencer Colton",
     "description": "Adds improvements to the BMC Footprints IT Service Manager.",
     "web_accessible_resources": ["vendor/*","css/*"],

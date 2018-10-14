@@ -269,7 +269,7 @@ span#controlPanel td[nowrap] table a[title="Previous"] div::before {
   font-family: 'Font Awesome 5 Free';
 }
 
-img[src$="previous_faded.png"] {
+img[src$="previous_faded.png"], img[src$="next_faded.png"] {
   display: none;
 }
 
