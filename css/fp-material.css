@@ -1,0 +1,470 @@
+body {
+	background-color: #fff;
+	height: initial !important;
+	font-family: Roboto, sans-serif !important;
+  margin: 0 !important;
+  min-width: 920px;
+}
+
+table.dialog {
+  border: none;
+}
+
+#ContentWrapper {
+    box-shadow:0px 0px 8px 2px rgba(0, 0, 0, 0.2) !important;
+	margin: 10px;
+	height: auto !important;
+	min-height: initial !important;
+}
+
+span#controlPanel table tr:first-of-type td:last-of-type span > div {
+	font-size: 12px !important;
+}
+
+div#editButton img, div#detailsButton img, div#copyMoveButton img, div#iLinkButton img, div#subtaskMenuButton img, div#globalSubButton img, div#deleteButton img, div#reportButton img {
+	display: none;	
+}
+
+span#controlPanel {
+	padding-left: 6px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+span#controlPanel > table:first-of-type, span#controlPanel:first-of-type > table > tbody {
+  display: block;
+  width: 100%;
+}
+
+span#controlPanel > table:first-of-type > tbody > tr {
+  display: flex;
+  margin-bottom: 4px;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+div#controlPanelHolder {
+	height: 48px;
+}
+
+span#editButton_textSpan::before, span#detailsButton_textSpan::before, span#copyMoveButton_textSpan::before, span#iLinkButton_textSpan::before,
+span#subtaskMenuButton_textSpan::before, span#globalSubButton_textSpan::before, span#deleteButton_textSpan::before, span#reportButton_textSpan::before  {
+	font-family: "Font Awesome 5 Free";
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+	font-weight: 400;
+}
+
+a#globalSubButtonLink, a#reportButtonLink {
+  display: none;
+}
+
+span#editButton_textSpan::before {
+	content: '\f044';
+}
+
+span#detailsButton_textSpan::before {
+	content: '\f15c';
+}
+
+span#copyMoveButton_textSpan::before {
+	content: '\f0c5';
+}
+
+span#iLinkButton_textSpan::before {
+	content: '\f0c1';
+	font-weight: 900;
+}
+
+span#subtaskMenuButton_textSpan::before {
+	content: '\f0cb';
+	font-weight: 900;
+}
+
+span#globalSubButton_textSpan::before {
+	content: '\f0ac';
+	font-weight: 900;
+}
+
+span#deleteButton_textSpan::before {
+	content: '\f2ed';
+}
+
+span#reportButton_textSpan::before {
+	content: '\f080';
+}
+
+div#TimeTracking_ecTable, table#TimeTracking_ecTable, div#CILinks_ecTable, table#CILinks_ecTable {
+	display: none !important;
+}
+
+div#controlPanelHolder div.button_on, select[name="QUICKCREATE"] + table div.button_on, input[name="time"] + table div.button_on, a[title="Select Contact"] div.button_on, div#historyButton.button_on, div#clearButton.button_on, div#viewCurrentInternal__bNotes.button_on, div#goButtonBottom.button_on, a[title="Check Availability"] > div.button_on, a[title="Help"] > div.button_on, div#newAttach.button_on, a[title="Spell Check"] > div.button_on {
+	border: none !important;
+	background-color: #E4E0EE;
+}
+
+div#controlPanelHolder div.button_off, div#controlPanelHolder div.button_on, select[name="QUICKCREATE"] + table div.button_off, select[name="QUICKCREATE"] + table div.button_on, input[name="time"] + table div.button_on, input[name="time"] + table div.button_off, div#pauseunpause, a[title="Select Contact"] div.button_on, a[title="Select Contact"] div.button_off, div#historyButton, div#clearButton, div#viewCurrentInternal__bNotes, div#goButtonBottom, a[title="Check Availability"] > div, a[title="Help"] > div, div#newAttach, a[title="Spell Check"] > div {
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0 16px !important;
+	height: 36px;
+	box-sizing: border-box;
+	min-width: 64px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 5px;
+	transition: background-color 0.15s ease-in;
+}
+
+div#goButtonBottom {
+  margin-bottom: 3px;
+}
+
+div#pauseunpause.button_pressed {
+  background-color: #836EAA;
+  border: none;
+  padding: 0 16px !important;
+}
+
+a[title="Select Contact"] {
+  color: #4E2A84 !important;
+}
+
+a[title="Select Contact"] div span::before {
+  content: '\f007';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+div#newAttach {
+  color: #4E2A84;
+}
+
+div#newAttach span::before {
+  content: '\f0c6';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;  
+}
+
+div#controlPanelHolder div.button_off img, div#controlPanelHolder div.button_on img, select[name="QUICKCREATE"] + table div.button_off img, select[name="QUICKCREATE"] + table div.button_on img, input[name="time"] + table div.button_on img, input[name="time"] + table div.button_off img, div#pauseunpause.button_pressed img, a[title="Select Contact"] div.button_on img, a[title="Select Contact"] div.button_off img, div#historyButton img, div#clearButton img, div#viewCurrentInternal__bNotes img, a[title="Check Availability"] > div img, a[title="Help"] img, div#newAttach img, a[title="Spell Check"] > div img {
+  display: none;
+}
+
+a[title="Spell Check"] > div {
+  position: relative;
+  height: 25px;
+  top: 9px;
+  right: 10px;
+  padding: 0 !important;
+  min-width: 26px;
+}
+
+a[title="Spell Check"] > div::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+	font-size: 1.1em;
+	position: relative;
+  color: #79AF74;
+}
+
+a[title="Check Availability"] > div {
+  color: #4E2A84;
+}
+
+a[title="Check Availability"] > div span::before {
+  content: '\f073';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+div#clearButton span::before {
+  content: '\f2ed';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+div#historyButton, div#clearButton, div#viewCurrentInternal__bNotes {
+  color: #4E2A84;
+}
+
+div#viewCurrentInternal__bNotes span::before {
+  content: '\f15c';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+div#historyButton span::before {
+  content: '\f1da';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+table#ContactInformation_ecTable td.dialogMainContent > table.inlineDialogHeading:first-of-type > tbody > tr {
+  display: flex;
+}
+
+table#ContactInformation_ecTable td.dialogMainContent > table.inlineDialogHeading:first-of-type tr td {
+  padding: 0;
+}
+
+input[name="time"] + table div#pauseunpause::before {
+  content: '\f04c';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+input[name="time"] + table div#pauseunpause[data-state="play"]::before {
+  content: '\f04b';
+}
+
+div.ecDialogHeading {
+	width: inherit !important;
+}
+
+span#controlPanel td[nowrap] {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+  padding-right: 5px;
+}
+
+span#controlPanel td[nowrap] table div img {
+  display: none;
+}
+
+span#controlPanel td[nowrap] table a[title="Next"] div::before {
+  content: '\f061';
+  font-family: 'Font Awesome 5 Free';
+}
+
+a[title="Help"] > div::before {
+  content: '\f059';
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.5em;
+  color: #3546ff;
+}
+
+span#controlPanel td[nowrap] table a[title="Previous"] div::before {
+  content: '\f060';
+  font-family: 'Font Awesome 5 Free';
+}
+
+img[src$="previous_faded.png"] {
+  display: none;
+}
+
+div#gobackmenu0, div#gobackmenu1, div#gobackmenu2 {
+  
+}
+
+div#gobackmenu0 img, div#gobackmenu1 img, div#gobackmenu2 img {
+  display: none;
+}
+
+table.submenu a.button div img {
+  display: none;
+}
+
+span#gobackmenu0_textSpan::before, span#gobackmenu1_textSpan::before, span#gobackmenu2_textSpan::before {
+  content: '\f077';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+span#copyButton_textSpan::before, span#copyOtherButton_textSpan::before, span#moveButton_textSpan::before {
+  content: '\f0c5';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+span#mLinkButton_textSpan::before {
+  content: '\f35d';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+span#newSubtaskButton_textSpan::before {
+  content: '\f067';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+div#gobutton img, div#goButtonBottom img {
+  display: none;
+}
+
+span#goButton_textSpan::before, span#goButtonBottom_textSpan::before {
+  content: '\f0c7';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+}
+
+table.dialogHeading {
+  background-image: none;
+}
+
+div.ecDialogHeadingOpen td.dialogTitle_ec, div.ecDialogHeading td.dialogTitle_ec {
+  background-image: none;
+}
+
+div.ecDialogHeading:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
+  max-height: 0;
+  transition: max-height 0.2s;
+  overflow: hidden;
+  display: block !important;
+}
+
+div.ecDialogHeadingOpen:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
+  max-height: 1500px;
+}
+
+div.ecDialogHeading {
+  border: none;
+  height: 33px;
+}
+
+div.ecDialogHeading + table,
+div.ecDialogHeading + table > tbody,
+div.ecDialogHeading + table > tbody > tr,
+div.ecDialogHeading + table > tbody > tr > td {
+  display: block;
+}
+
+div.ecDialogHeading > table {
+  padding: 6px;
+}
+
+td.dialogTitle_ec label {
+  font-size: 1.3em;
+  padding-left: 0;
+}
+
+div#wait_c {
+  display: none;
+}
+
+div#StaticAreaDiv table.dialogHeading {
+  padding: 6px;
+}
+
+div#StaticAreaDiv table.dialogHeading td.dialogTitle {
+  font-size: 1.3em;
+}
+
+fieldset label {
+  font-size: 1.05em;
+}
+
+table#IssueInformation_ecTable fieldset#row-3 {
+  display: none !important;
+}
+
+div[title="Impact"], div[title="Urgency"], div[title="Urgency"] ~ div {
+  display: none;
+}
+
+input[type="text"], input[type="email"], input.ticketField, select:not(#descIndicator):not(#pmember):not(#assgnee) {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+select[name="QUICKCREATE"]:not(#descIndicator) {
+  padding: 4px;
+}
+
+table#ContactInformation_ecTable fieldset, div#StaticAreaDiv fieldset, table#IssueInformation_ecTable fieldset {
+  margin-bottom: 10px;
+}
+
+select[name="QUICKCREATE"] + table {
+  width: auto;
+}
+
+select[name="QUICKCREATE"] + table span::before {
+  content: '\f0e7';
+  font-family: 'Font Awesome 5 Free';
+	padding-right: 5px;
+	font-size: 1.1em;
+	position: relative;
+  font-weight: 900;
+}
+
+div#StaticAreaDiv table.dialogHeading td {
+  display: flex;
+}
+
+div#StaticAreaDiv table.dialogHeading td:nth-of-type(2) {
+  display: none;
+}
+
+div#StaticAreaDiv table.dialogHeading td:nth-of-type(3) {
+  flex-basis: 50%;
+}
+
+div#StaticAreaDiv table.dialogHeading td:nth-of-type(3), div#StaticAreaDiv table.dialogHeading td:nth-of-type(4) {
+  justify-content: flex-end;
+}
+
+div#StaticAreaDiv table.dialogHeading tr {
+  display: flex;
+  align-items: center;
+}
+
+table#IssueInformation_ecTable img[title="Insert Quick Description"] {
+  display: none;
+}
+
+a#searchKBButtonLink {
+  display: none;
+}
+
+#SLA__bResponse__bTime_pendingNoteInfoPanelDiv_c, #SLA__bDue__bDate_pendingNoteInfoPanelDiv_c {
+  display: none;
+}
+
+#IssueInformation_ecTable table.inlineDialogHeading td:first-of-type {
+  padding-right: 0;
+}
+
+span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type div div {
+  display:block !important;
+}
+
+span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type div div:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type > div {
+  padding-top: 0 !important;
+}

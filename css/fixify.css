@@ -1,0 +1,18 @@
+.btn-sm {
+  height: 28px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-sm:hover {
+	background-color: #E4E0EE;
+}
+
+.btn-sm span {
+  line-height: 18px;
+  color: #4E2A84;
+}
