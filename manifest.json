@@ -29,7 +29,8 @@
                 "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
             ],
             "js": [
-                "js/inject_css.js"
+                "js/inject_css.js",
+                "js/mce.js"
             ],
             "run_at": "document_start"
         },

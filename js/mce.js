@@ -1,0 +1,1 @@
+const delayTinyMCE = true;

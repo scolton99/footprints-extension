@@ -3,7 +3,7 @@ body {
 	height: initial !important;
 	font-family: Roboto, sans-serif !important;
   margin: 0 !important;
-  min-width: 920px;
+  min-width: 0;
 }
 
 table.dialog {
@@ -15,6 +15,7 @@ table.dialog {
 	margin: 10px;
 	height: auto !important;
 	min-height: initial !important;
+  min-width: 0px;
 }
 
 span#controlPanel table tr:first-of-type td:last-of-type span > div {
@@ -40,9 +41,13 @@ span#controlPanel > table:first-of-type, span#controlPanel:first-of-type > table
 span#controlPanel > table:first-of-type > tbody > tr {
   display: flex;
   margin-bottom: 4px;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: visible;
 }
+
+/* span#controlPanel > table:first-of-type > tbody > tr::-webkit-scrollbar { */
+  /* display: none; */
+/* } */
 
 div#controlPanelHolder {
 	height: 48px;
@@ -101,8 +106,12 @@ div#TimeTracking_ecTable, table#TimeTracking_ecTable, div#CILinks_ecTable, table
 }
 
 div#controlPanelHolder div.button_on, select[name="QUICKCREATE"] + table div.button_on, input[name="time"] + table div.button_on, a[title="Select Contact"] div.button_on, div#historyButton.button_on, div#clearButton.button_on, div#viewCurrentInternal__bNotes.button_on, div#goButtonBottom.button_on, a[title="Check Availability"] > div.button_on, a[title="Help"] > div.button_on, div#newAttach.button_on, a[title="Spell Check"] > div.button_on {
-	border: none !important;
+  border: 1px solid #ccc !important;
 	background-color: #E4E0EE;
+}
+
+div#newAttach {
+  margin-bottom: 5px;
 }
 
 div#controlPanelHolder div.button_off, div#controlPanelHolder div.button_on, select[name="QUICKCREATE"] + table div.button_off, select[name="QUICKCREATE"] + table div.button_on, input[name="time"] + table div.button_on, input[name="time"] + table div.button_off, div#pauseunpause, a[title="Select Contact"] div.button_on, a[title="Select Contact"] div.button_off, div#historyButton, div#clearButton, div#viewCurrentInternal__bNotes, div#goButtonBottom, a[title="Check Availability"] > div, a[title="Help"] > div, div#newAttach, a[title="Spell Check"] > div {
@@ -117,8 +126,9 @@ div#controlPanelHolder div.button_off, div#controlPanelHolder div.button_on, sel
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 0 5px;
+  margin-right: 5px;
 	transition: background-color 0.15s ease-in;
+  border: 1px solid #ccc;
 }
 
 div#goButtonBottom {
@@ -128,7 +138,12 @@ div#goButtonBottom {
 div#pauseunpause.button_pressed {
   background-color: #836EAA;
   border: none;
-  padding: 0 16px !important;
+}
+
+div#pauseunpause, div#pauseunpause.button_on, div#pauseunpause.button_off, div#pauseunpause.button_pressed {
+  padding: 0 !important;
+  min-width: 33px !important;
+  border: none !important;
 }
 
 a[title="Select Contact"] {
@@ -159,13 +174,40 @@ div#controlPanelHolder div.button_off img, div#controlPanelHolder div.button_on 
   display: none;
 }
 
-a[title="Spell Check"] > div {
+div#StaticAreaDiv a[title="Spell Check"] > div {
   position: relative;
-  height: 25px;
+  height: 26px;
   top: 9px;
-  right: 10px;
+  right: 5px;
   padding: 0 !important;
   min-width: 26px;
+  border: none;
+}
+
+div#StaticAreaDiv a[title="Spell Check"] > div.button_on {
+  border: none !important;
+}
+
+div.indented a[title="Spell Check"] > div, div#Internal__bNotes_originalDataDiv ~ table a[title='Spell Check'] > div {
+  border: none;
+  margin-top: 5px;
+  color: #4E2A84;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.indented a[title="Spell Check"] > div {
+  position: relative;
+  left: -4px;
+}
+
+div.indented a[title="Spell Check"] > div.button_on, div#Internal__bNotes_originalDataDiv ~ table a[title='Spell Check'] > div.button_on {
+  border: none !important;
+}
+
+div.indented a[title="Spell Check"] > div::after, div#Internal__bNotes_originalDataDiv ~ table a[title='Spell Check'] > div::after {
+  content: 'Check Spelling';
+  margin-left: 5px;
 }
 
 a[title="Spell Check"] > div::before {
@@ -178,6 +220,7 @@ a[title="Spell Check"] > div::before {
 
 a[title="Check Availability"] > div {
   color: #4E2A84;
+  margin: 0 !important;
 }
 
 a[title="Check Availability"] > div span::before {
@@ -198,6 +241,10 @@ div#clearButton span::before {
 
 div#historyButton, div#clearButton, div#viewCurrentInternal__bNotes {
   color: #4E2A84;
+}
+
+div#viewCurrentInternal__bNotes {
+  margin-bottom: 5px;
 }
 
 div#viewCurrentInternal__bNotes span::before {
@@ -227,7 +274,7 @@ table#ContactInformation_ecTable td.dialogMainContent > table.inlineDialogHeadin
 input[name="time"] + table div#pauseunpause::before {
   content: '\f04c';
   font-family: 'Font Awesome 5 Free';
-	padding-right: 5px;
+	padding-right: 0;
 	font-size: 1.1em;
 	position: relative;
 }
@@ -240,12 +287,15 @@ div.ecDialogHeading {
 	width: inherit !important;
 }
 
-span#controlPanel td[nowrap] {
+span#controlPanel > table > tbody > tr > td[nowrap] {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  width: 100%;
+  width: auto;
   padding-right: 5px;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
 span#controlPanel td[nowrap] table div img {
@@ -262,6 +312,11 @@ a[title="Help"] > div::before {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.5em;
   color: #3546ff;
+}
+
+span#controlPanel td[nowrap] > span:first-of-type {
+  height: 36px !important;
+  overflow-y: hidden;
 }
 
 span#controlPanel td[nowrap] table a[title="Previous"] div::before {
@@ -338,14 +393,15 @@ div.ecDialogHeadingOpen td.dialogTitle_ec, div.ecDialogHeading td.dialogTitle_ec
 }
 
 div.ecDialogHeading:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
-  max-height: 0;
-  transition: max-height 0.2s;
+  height: 0;
+  transition: height 0.2s;
   overflow: hidden;
   display: block !important;
 }
 
 div.ecDialogHeadingOpen:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
-  max-height: 1500px;
+  /* max-height: 1500px; */
+  height: auto;
 }
 
 div.ecDialogHeading {
@@ -360,8 +416,83 @@ div.ecDialogHeading + table > tbody > tr > td {
   display: block;
 }
 
+div.ecDialogHeading + table > tbody > tr > td {
+  box-sizing: border-box;
+}
+
+table#AssigneesandNotifications_ecTable > tbody > tr > td > table > tbody > tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+table#AssigneesandNotifications_ecTable > tbody > tr > td > table > tbody > tr > td {
+  width: auto;
+  border: none !important;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+table#Attachments_ecTable > tbody > tr > td > table > tbody > tr {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+table#Attachments_ecTable > tbody > tr > td > table > tbody > tr > td.fieldLabel {
+  flex-basis: 100%;
+  font-size: 1.1em;
+  margin-top: 15px;
+}
+
+table#Attachments_ecTable > tbody > tr > td > table > tbody > tr > td[colspan="5"] {
+  width: 100%;
+}
+
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent {
+  box-sizing: border-box;
+}
+
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table,
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbody,
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbody > tr,
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbody > tr > td {
+  display: block;
+}
+
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbody > tr > td > div:first-of-type {
+  margin: 0 !important;
+}
+
+table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbody > tr > td > table:last-of-type div[title="Internal Notes"] {
+  width: 100%;
+}
+
+div#Internal__bNotes {
+  width: 100%;
+  margin: 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea#Internal__bNotes {
+  width: 100%;
+}
+
+table#IssueInformation_ecTable div[title="HR3"] {
+  display: none;
+}
+
 div.ecDialogHeading > table {
   padding: 6px;
+}
+
+span#completeToolbar > table {
+  width: 100%;
+}
+
+iframe[name="descPane"] {
+  box-sizing: border-box;
+  width: 100% !important;
 }
 
 td.dialogTitle_ec label {
@@ -378,7 +509,8 @@ div#StaticAreaDiv table.dialogHeading {
 }
 
 div#StaticAreaDiv table.dialogHeading td.dialogTitle {
-  font-size: 1.3em;
+  font-size: 1.15em;
+  width: 100% !important;
 }
 
 fieldset label {
@@ -386,7 +518,9 @@ fieldset label {
 }
 
 table#IssueInformation_ecTable fieldset#row-3 {
-  display: none !important;
+  /* display: none !important; */
+  
+  /* Incompatible w/ Smart Classrooms */
 }
 
 div[title="Impact"], div[title="Urgency"], div[title="Urgency"] ~ div {
@@ -401,6 +535,7 @@ input[type="text"], input[type="email"], input.ticketField, select:not(#descIndi
 
 select[name="QUICKCREATE"]:not(#descIndicator) {
   padding: 4px;
+  max-width: 150px;
 }
 
 table#ContactInformation_ecTable fieldset, div#StaticAreaDiv fieldset, table#IssueInformation_ecTable fieldset {
@@ -414,10 +549,18 @@ select[name="QUICKCREATE"] + table {
 select[name="QUICKCREATE"] + table span::before {
   content: '\f0e7';
   font-family: 'Font Awesome 5 Free';
-	padding-right: 5px;
-	font-size: 1.1em;
+	padding-right: 0;
+	font-size: 16px;
 	position: relative;
   font-weight: 900;
+}
+
+select[name="QUICKCREATE"] + table div, select[name="QUICKCREATE"] + table div.button_off, select[name="QUICKCREATE"] + table div.button_on {
+  font-size: 0px;
+  min-width: 33px;
+  padding: 0 !important;
+  margin-left: 5px;
+  border: none !important;
 }
 
 div#StaticAreaDiv table.dialogHeading td {
@@ -445,6 +588,10 @@ table#IssueInformation_ecTable img[title="Insert Quick Description"] {
   display: none;
 }
 
+table#IssueInformation_ecTable >tbody > tr > td.dialogMainContent > table.straightenColumnsSingle > tbody > tr > td > table.straightenColumns > div:first-of-type  {
+  margin: 0 !important;
+}
+
 a#searchKBButtonLink {
   display: none;
 }
@@ -453,7 +600,7 @@ a#searchKBButtonLink {
   display: none;
 }
 
-#IssueInformation_ecTable table.inlineDialogHeading td:first-of-type {
+div#IssueInformation_ecTable table.inlineDialogHeading td:first-of-type {
   padding-right: 0;
 }
 
