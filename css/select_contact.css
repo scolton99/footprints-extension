@@ -1,0 +1,4 @@
+td.dialogMainContent > table.straightenColumns ~ hr,
+td.dialogMainContent > table.straightenColumns ~ b {
+  display: none;
+}
