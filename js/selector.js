@@ -16,3 +16,7 @@ var userInput = chrome.storage.local.get("location", function(storedLocation) {
     fpLocation = locations[storedLocation];    
     dropdown.value = fpLocation;
 });
+
+let request_type = document.getElementById("Request__bType");
+
+request_type.value = "Service__bRequest";

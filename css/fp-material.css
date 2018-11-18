@@ -319,6 +319,10 @@ span#controlPanel td[nowrap] > span:first-of-type {
   overflow-y: hidden;
 }
 
+span#controlPanel td[nowrap] table a[title="Previous"] div, span#controlPanel td[nowrap] table a[title="Next"] div {
+  margin-left: 5px;
+}
+
 span#controlPanel td[nowrap] table a[title="Previous"] div::before {
   content: '\f060';
   font-family: 'Font Awesome 5 Free';
@@ -432,6 +436,10 @@ table#AssigneesandNotifications_ecTable > tbody > tr > td > table > tbody > tr >
   margin-bottom: 20px;
 }
 
+table#AssigneesandNotifications_ecTable > tbody > tr > td > table > tbody > tr > td:only-of-type {
+  flex-grow: 1;
+}
+
 table#Attachments_ecTable > tbody > tr > td > table > tbody > tr {
   display: flex;
   width: 100%;
@@ -522,10 +530,10 @@ table#IssueInformation_ecTable fieldset#row-3 {
   
   /* Incompatible w/ Smart Classrooms */
 }
-
-div[title="Impact"], div[title="Urgency"], div[title="Urgency"] ~ div {
-  display: none;
-}
+ /* Remove per Lynne */
+/* div[title="Impact"], div[title="Urgency"], div[title="Urgency"] ~ div { */
+  /* display: none; */
+/* } */
 
 input[type="text"], input[type="email"], input.ticketField, select:not(#descIndicator):not(#pmember):not(#assgnee) {
   padding: 5px;

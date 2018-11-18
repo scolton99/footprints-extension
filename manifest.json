@@ -36,6 +36,26 @@
         },
         {
             "matches": [
+              "https://itsm.northwestern.edu/MRcgi/MRABregsearch_page.pl*",
+              "https://itsm-fp.northwestern.edu/MRcgi/MRABregsearch_page.pl*"
+            ],
+            "css": [
+              "css/select_contact.css"
+            ],
+            "run_at": "document_end"
+        },
+        {
+          "matches": [
+            "https://itsm.northwestern.edu/MRcgi/MRABreghome.pl",
+            "https://itsm-fp.northwestern.edu/MRcgi/MRABreghome.pl"            
+          ],
+          "js": [
+            "js/close_empty.js"
+          ],
+          "run_at": "document_end"          
+        },
+        {
+            "matches": [
                 "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
                 "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
             ],
@@ -44,7 +64,6 @@
             ],
             "run_at": "document_end"
         },
-
         {
             "matches": [
                 "https://kb.northwestern.edu/internal/conweb",
