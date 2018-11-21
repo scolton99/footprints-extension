@@ -9,7 +9,7 @@ If your location cannot be determined, it asks for it on the Footprints login sc
 and the extension then automatically populates the Walk-In Location field when editing tickets.
 
 The extension also applies a more aesthetically pleasing theme to the ticket page and implements some new functionality
-such as the "Fixify" button to clean up emails before they are sent and the ability to view image attachments by 
+such as the "Fixify" button to clean up emails before they are sent and the ability to view image and text attachments by 
 hovering over them.
 
 We updated the Northwestern IT splash page ("CONWEB") to include a banner telling consultants to use this. The newest 

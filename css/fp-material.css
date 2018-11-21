@@ -23,7 +23,7 @@ span#controlPanel table tr:first-of-type td:last-of-type span > div {
 }
 
 div#editButton img, div#detailsButton img, div#copyMoveButton img, div#iLinkButton img, div#subtaskMenuButton img, div#globalSubButton img, div#deleteButton img, div#reportButton img {
-	display: none;	
+	display: none;
 }
 
 span#controlPanel {
@@ -167,7 +167,7 @@ div#newAttach span::before {
   font-family: 'Font Awesome 5 Free';
 	padding-right: 5px;
 	font-size: 1.1em;
-	position: relative;  
+	position: relative;
 }
 
 div#controlPanelHolder div.button_off img, div#controlPanelHolder div.button_on img, select[name="QUICKCREATE"] + table div.button_off img, select[name="QUICKCREATE"] + table div.button_on img, input[name="time"] + table div.button_on img, input[name="time"] + table div.button_off img, div#pauseunpause.button_pressed img, a[title="Select Contact"] div.button_on img, a[title="Select Contact"] div.button_off img, div#historyButton img, div#clearButton img, div#viewCurrentInternal__bNotes img, a[title="Check Availability"] > div img, a[title="Help"] img, div#newAttach img, a[title="Spell Check"] > div img {
@@ -333,7 +333,7 @@ img[src$="previous_faded.png"], img[src$="next_faded.png"] {
 }
 
 div#gobackmenu0, div#gobackmenu1, div#gobackmenu2 {
-  
+
 }
 
 div#gobackmenu0 img, div#gobackmenu1 img, div#gobackmenu2 img {
@@ -403,6 +403,18 @@ div.ecDialogHeading:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
   display: block !important;
 }
 
+a.fp-attachment > div.container {
+    display: none;
+}
+
+a.fp-attachment:hover > div.container {
+    display: block;
+}
+
+div.ecDialogHeadingOpen#Attachments_ecTable + table {
+    overflow: unset !important;
+}
+
 div.ecDialogHeadingOpen:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
   /* max-height: 1500px; */
   height: auto;
@@ -444,6 +456,10 @@ table#Attachments_ecTable > tbody > tr > td > table > tbody > tr {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+}
+
+table#Attachments_ecTable > tbody > tr > td > table > tbody > tr > td {
+    width: 100%;
 }
 
 table#Attachments_ecTable > tbody > tr > td > table > tbody > tr > td.fieldLabel {
@@ -527,7 +543,7 @@ fieldset label {
 
 table#IssueInformation_ecTable fieldset#row-3 {
   /* display: none !important; */
-  
+
   /* Incompatible w/ Smart Classrooms */
 }
  /* Remove per Lynne */
