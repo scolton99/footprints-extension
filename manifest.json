@@ -1,82 +1,65 @@
 {
-    "manifest_version": 2,
-    "name": "Footprints Improver",
-    "version": "2.2",
-    "author": "Tushar Chandra, Spencer Colton",
-    "description": "Adds improvements to the BMC Footprints IT Service Manager.",
-    "web_accessible_resources": ["vendor/*","css/*"],
-    "options_ui": {
-      "page": "options.html",
-      "open_in_tab": false
+  "manifest_version": 2,
+  "name": "Footprints Extension",
+  "version": "2.2.1",
+  "author": "Tushar Chandra, Spencer Colton",
+  "description": "Adds improvements to the BMC Footprints IT Service Manager.",
+  "web_accessible_resources": [
+    "vendor/*",
+    "css/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
+        "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
+      ],
+      "js": [
+        "js/selector.js",
+        "js/pauseunpause.js",
+        "js/fixify.js",
+        "js/attachments.js"
+      ],
+      "run_at": "document_end"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
-                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
-            ],
-            "js": [
-                "js/selector.js",
-                "js/pauseunpause.js",
-                "js/fixify.js",
-                "js/attachments.js"
-            ],
-            "run_at": "document_end"
-        },        
-        {
-            "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
-                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
-            ],
-            "js": [
-                "js/inject_css.js",
-                "js/mce.js"
-            ],
-            "run_at": "document_start"
-        },
-        {
-            "matches": [
-              "https://itsm.northwestern.edu/MRcgi/MRABregsearch_page.pl*",
-              "https://itsm-fp.northwestern.edu/MRcgi/MRABregsearch_page.pl*"
-            ],
-            "css": [
-              "css/select_contact.css"
-            ],
-            "run_at": "document_end"
-        },
-        {
-          "matches": [
-            "https://itsm.northwestern.edu/MRcgi/MRABreghome.pl",
-            "https://itsm-fp.northwestern.edu/MRcgi/MRABreghome.pl"            
-          ],
-          "js": [
-            "js/close_empty.js"
-          ],
-          "run_at": "document_end"          
-        },
-        {
-            "matches": [
-                "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
-                "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
-            ],
-            "js": [
-                "js/choose_location.js"
-            ],
-            "run_at": "document_end"
-        },
-        {
-            "matches": [
-                "https://kb.northwestern.edu/internal/conweb",
-                "https://kb.northwestern.edu/internal/71903",
-                "https://kb.northwestern.edu/internal/page.php?id=71903"
-            ],
-            "js": [
-                "js/disable_conweb_banner.js"
-            ],
-            "run_at": "document_end"
-        }
-    ],
-    "permissions": [
-        "storage"
-    ]
+    {
+      "matches": [
+        "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
+        "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
+      ],
+      "js": [
+        "js/inject_css.js",
+        "js/mce.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
+        "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
+      ],
+      "js": [
+        "js/choose_location.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://kb.northwestern.edu/internal/conweb",
+        "https://kb.northwestern.edu/internal/71903",
+        "https://kb.northwestern.edu/internal/page.php?id=71903"
+      ],
+      "js": [
+        "js/disable_conweb_banner.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
 }
