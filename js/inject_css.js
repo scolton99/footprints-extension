@@ -9,7 +9,7 @@ function injectStyles(url) {
       setTimeout(injectStyles.bind(null, url), 10);
       return;
     }
-    
+
     var elem = document.createElement('link');
     elem.rel = 'stylesheet';
     elem.setAttribute('href', url);
@@ -21,6 +21,7 @@ function injectAll() {
   injectStyles(chrome.extension.getURL('vendor/fontawesome/css/all.min.css'));
   injectStyles(chrome.extension.getURL('css/fp-material.css'));
   injectStyles(chrome.extension.getURL('css/fixify.css'));
+  injectStyles(chrome.extension.getURL('css/attachments.css'));
 }
 
 injectAll();

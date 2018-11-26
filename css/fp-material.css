@@ -403,14 +403,6 @@ div.ecDialogHeading:not(#TimeTracking_ecTable):not(#CILinks_ecTable) + table {
   display: block !important;
 }
 
-a.fp-attachment > div.container {
-    display: none;
-}
-
-a.fp-attachment:hover > div.container {
-    display: block;
-}
-
 div.ecDialogHeadingOpen#Attachments_ecTable + table {
     overflow: unset !important;
 }

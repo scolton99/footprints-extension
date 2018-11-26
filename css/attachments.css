@@ -1,0 +1,7 @@
+a.fp-attachment > div.container {
+  display: none;
+}
+
+a.fp-attachment:hover > div.container {
+  display: block;
+}
