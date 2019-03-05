@@ -3,6 +3,11 @@ let attachments = document.querySelectorAll("table#attachments_summary a");
 attachments.forEach(function (e) {
     console.log("Found attachment " + e.id);
 
+    if (e.textContent !== "Download") {
+        console.log("This is not the download button for an attachment. Inner text: " + e.textContent);
+        return;
+    }
+
     const oldEvent = e.getAttribute("onclick");
 
     // Get the arguments to the function call in the existing onclick attr
@@ -52,7 +57,7 @@ attachments.forEach(function (e) {
         let previewImage = document.createElement("IMG");
         previewImage.setAttribute("src", url);
         previewImage.setAttribute("alt", "Attachment");
-        previewImage.style.maxWidth = "65vw";
+        previewImage.style.maxWidth = "700px";
         previewImage.style.maxHeight = "80vh";
 
         let container = document.createElement("DIV");
@@ -66,6 +71,7 @@ attachments.forEach(function (e) {
         container.style.boxSizing = "border-box";
         container.style.right = "0";
         container.style.bottom = "100%";
+        container.style.pointerEvents = "none";
 
         nLink.appendChild(container);
     } else if (text_extensions.includes(extension)) {
@@ -100,6 +106,7 @@ attachments.forEach(function (e) {
             container.style.boxSizing = "border-box";
             container.style.right = "0";
             container.style.bottom = "100%";
+            container.style.pointerEvents = "none";
 
             nLink.appendChild(container);
         }).bind(x, e);
