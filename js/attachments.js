@@ -23,8 +23,25 @@ attachments.forEach(function (e) {
         args[i] = dirtyArgs[i].replace(/'/g, "")
     }
 
+    let query_param_tuples = args[1].split('&');
+    const allowed_query_keys = ["USER","PROJECTID","MRP","EXT_LINK","CUSTM","SOLUTIONS_FROM_OTHER_PROJ","ORIGINAL_PROJECT","MR","ATTACHMENT_NAME","SESS_ID"];
+    let final_qp = [];
+    for (let i = 0; i < query_param_tuples.length; i++) {
+        const key_val = query_param_tuples[i].split("=");
+        if (allowed_query_keys.includes(key_val[0].toUpperCase()))
+            final_qp.push(key_val);
+    }
+
+    let fin_q_str = "";
+    for (let i = 0; i < final_qp.length; i++) {
+        fin_q_str += final_qp[i][0] + "=" + final_qp[i][1];
+        if (i + 1 < final_qp.length) {
+            fin_q_str += "&";
+        }
+    }
+
     // The final URL is made up of the first original argument (the URL) + the query string (Second arg)
-    let url = args[0] + "?" + args[1];
+    let url = args[0] + "?" + fin_q_str;
 
     console.log("Checking type...");
 
