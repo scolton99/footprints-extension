@@ -15,6 +15,9 @@ hovering over them.
 We updated the Northwestern IT splash page ("CONWEB") to include a banner telling consultants to use this. The newest 
 version of the extension removes that banner.
 
+Because the labels that we use to categorize our tickets can be difficult to remember, there is now a search box for 
+categorizations directly above the Service Family field. 
+
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
 [here](https://chrome.google.com/webstore/detail/footprints-selector/bhcajiiignledggebpaalkpcccbjohhc).
