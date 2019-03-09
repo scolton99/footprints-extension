@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Footprints Extension",
-  "version": "2.3.5",
+  "version": "2.4",
   "author": "Tushar Chandra, Spencer Colton",
   "description": "Adds improvements to the BMC Footprints IT Service Manager.",
   "icons": {
@@ -12,7 +12,8 @@
   "web_accessible_resources": [
     "vendor/*",
     "css/*",
-    "img/*"
+    "img/*",
+    "js/categories.js"
   ],
   "options_ui": {
     "page": "options.html",
@@ -28,7 +29,8 @@
         "js/selector.js",
         "js/pauseunpause.js",
         "js/fixify.js",
-        "js/attachments.js"
+        "js/attachments.js",
+        "js/inject_categories.js"
       ],
       "run_at": "document_end"
     },

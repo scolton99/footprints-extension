@@ -1,10 +1,7 @@
 let attachments = document.querySelectorAll("table#attachments_summary a");
 
 attachments.forEach(function (e) {
-    console.log("Found attachment " + e.id);
-
     if (e.textContent !== "Download") {
-        console.log("This is not the download button for an attachment. Inner text: " + e.textContent);
         return;
     }
 
@@ -43,13 +40,10 @@ attachments.forEach(function (e) {
     // The final URL is made up of the first original argument (the URL) + the query string (Second arg)
     let url = args[0] + "?" + fin_q_str;
 
-    console.log("Checking type...");
-
     // Check file extension...
     let pathBits = args[0].match(/Attachment\.pl\/(.*)/);
     if (pathBits.length === 0) {
         // File has no discernable extension and cannot be previewed
-        console.log("Not converting. Unable to determine attachment type.");
         return;
     }
 
@@ -61,8 +55,6 @@ attachments.forEach(function (e) {
     const text_extensions = ["csv", "txt", "text", "json"];
 
     if (image_extensions.includes(extension)) {
-        console.log("Attachment is an image. Processing...");
-
         let nLink = e.cloneNode(true);
         e.parentNode.replaceChild(nLink, e);
 
@@ -92,8 +84,6 @@ attachments.forEach(function (e) {
 
         nLink.appendChild(container);
     } else if (text_extensions.includes(extension)) {
-        console.log("Attachment is plaintext. Processing...");
-
         let x = new XMLHttpRequest();
         x.open("GET", url, true);
         x.onload = (function(e) {
@@ -128,9 +118,5 @@ attachments.forEach(function (e) {
             nLink.appendChild(container);
         }).bind(x, e);
         x.send();
-
-        console.log("Attachment conversion scheduled.");
-    } else {
-        console.log("Not converting. Type not allowed (" + extension + ").");
     }
 });
