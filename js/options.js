@@ -1,10 +1,12 @@
 function save_options() {
   var prettyFootprints = document.getElementById('prettyFootprints').checked;
   var popupMessage = document.getElementById('popupMessage').checked;
+  var autoRefresh = document.getElementById('autoRefresh').checked;
 
   chrome.storage.sync.set({
     prettyFootprints: prettyFootprints,
-    popupMessage: popupMessage
+    popupMessage: popupMessage,
+    autoRefresh: autoRefresh
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -21,10 +23,12 @@ function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
     prettyFootprints: true,
-    popupMessage: false
+    popupMessage: false,
+    autoRefresh: false
   }, function(items) {
     document.getElementById('prettyFootprints').checked = items.prettyFootprints;
     document.getElementById('popupMessage').checked = items.popupMessage;
+    document.getElementById('autoRefresh').checked = items.autoRefresh;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);

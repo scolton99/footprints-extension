@@ -4,7 +4,7 @@ const categories = fbConfig.fields.Category;
 
 const cat_map = {};
 
-const sep = " ⮕ ";
+const sep = " → ";
 
 if (document.querySelector("select[name='Service__bFamily']")) {
     for (let i = 0; i < service_families.choices.length; i++) {
@@ -94,6 +94,11 @@ if (document.querySelector("select[name='Service__bFamily']")) {
         const category_dropdown = document.querySelector("select[name='Category']");
         const sub_category_dropdown = document.querySelector("select[name='Sub__uCategory']");
 
+        let matches = [];
+
+        while (preview.firstChild)
+            preview.removeChild(preview.firstChild);
+
         for (const key of Object.keys(cat_map)) {
             let has = true;
 
@@ -102,6 +107,17 @@ if (document.querySelector("select[name='Service__bFamily']")) {
             }
 
             if (has) {
+                matches.push(key);
+            }
+        }
+
+        let found = false;
+
+        for (let i = 0; i < matches.length; i++) {
+            const key = matches[i];
+
+            if (!found) {
+                found = true;
                 service_family_dropdown.value = cat_map[key].service_family;
                 const service_family_event = new Event("change", {bubbles: true});
                 service_family_dropdown.dispatchEvent(service_family_event);
@@ -123,14 +139,46 @@ if (document.querySelector("select[name='Service__bFamily']")) {
                     const sub_category_event = new Event("change", {bubbles: true});
                     sub_category_dropdown.dispatchEvent(sub_category_event);
                 }
-
-                preview.value = key;
-
-                return;
             }
+
+            const option = document.createElement("option");
+            option.setAttribute("value", key);
+            option.textContent = key;
+
+            preview.appendChild(option);
+        }
+    };
+
+    window.pick_cat_preview = function() {
+        const preview = document.querySelector("#category_preview");
+        const key = preview.value;
+
+        const service_family_dropdown = document.querySelector("select[name='Service__bFamily']");
+        const service_dropdown = document.querySelector("select[name='Service']");
+        const category_dropdown = document.querySelector("select[name='Category']");
+        const sub_category_dropdown = document.querySelector("select[name='Sub__uCategory']");
+
+        service_family_dropdown.value = cat_map[key].service_family;
+        const service_family_event = new Event("change", {bubbles: true});
+        service_family_dropdown.dispatchEvent(service_family_event);
+
+        if (cat_map[key].service != null) {
+            service_dropdown.value = cat_map[key].service;
+            const service_event = new Event("change", {bubbles: true});
+            service_dropdown.dispatchEvent(service_event);
         }
 
-        preview.value = "(no matches)";
+        if (cat_map[key].category != null) {
+            category_dropdown.value = cat_map[key].category;
+            const category_event = new Event("change", {bubbles: true});
+            category_dropdown.dispatchEvent(category_event);
+        }
+
+        if (cat_map[key].sub_category != null) {
+            sub_category_dropdown.value = cat_map[key].sub_category;
+            const sub_category_event = new Event("change", {bubbles: true});
+            sub_category_dropdown.dispatchEvent(sub_category_event);
+        }
     };
 
     const tr = document.querySelector("div.cell[title='Service Family']").parentElement.parentElement.parentElement.parentElement;
@@ -140,13 +188,13 @@ if (document.querySelector("select[name='Service__bFamily']")) {
     search_box.id = "category_search";
     search_box.setAttribute("type", "text");
     search_box.style.width = "98.6%";
+    search_box.setAttribute("autocomplete", "off");
 
-    const preview = document.createElement("input");
+    const preview = document.createElement("select");
     preview.id = "category_preview";
-    preview.setAttribute("type", "text");
-    preview.setAttribute("disabled", "disabled");
     preview.style.width = "98.6%";
     preview.style.marginBottom = "3px";
+    preview.addEventListener("change", window.pick_cat_preview);
 
     const n_tr = document.createElement("tr");
     const n_td = document.createElement("td");

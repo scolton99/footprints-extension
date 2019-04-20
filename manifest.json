@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Footprints Extension",
-  "version": "2.4.1",
+  "version": "2.7",
   "author": "Tushar Chandra, Spencer Colton",
   "description": "Adds improvements to the BMC Footprints IT Service Manager.",
   "icons": {
@@ -13,11 +13,15 @@
     "vendor/*",
     "css/*",
     "img/*",
-    "js/categories.js"
+    "js/categories.js",
+    "js/auto_refresh.js"
   ],
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
+  },
+  "browser_action": {
+    "default_popup": "ui.html"
   },
   "content_scripts": [
     {
@@ -30,7 +34,8 @@
         "js/pauseunpause.js",
         "js/fixify.js",
         "js/attachments.js",
-        "js/inject_categories.js"
+        "js/inject_categories.js",
+        "js/assignees.js"
       ],
       "run_at": "document_end"
     },
@@ -82,12 +87,19 @@
         "https://itsm-fp.northwestern.edu/MRcgi/MRhomepage.pl*"
       ],
       "js": [
-        "js/popup.js"
+        "js/popup.js",
+        "js/inject_auto_refresh.js"
       ],
       "run_at": "document_start"
     }
   ],
   "permissions": [
-    "storage"
-  ]
+    "storage",
+    "contextMenus"
+  ],
+  "omnibox": {"keyword": "fp"},
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  }
 }

@@ -5,12 +5,20 @@ function fixify() {
   let nodes = descDoc.body.getElementsByTagName("*");
   
   for (let i = 0; i < nodes.length; i++) {
-    nodes[i].removeAttribute("style");
-    nodes[i].removeAttribute("face");
+    let l = nodes[i].style.length;
+
+    for (let j = 0; j < l; j++) {
+      if (nodes[i].style[j] !== "font-family" && nodes[i].style[j] !== "font-size")
+        continue;
+
+      nodes[i].style[nodes[i].style[j]] = "";
+    }
+
     nodes[i].removeAttribute("_mce_style");
+    nodes[i].removeAttribute("face");
   }
   
-  descDoc.body.style.fontFamily = "Verdana, Arial, Helvetica, sans-serif, sans-serif";
+  descDoc.body.style.fontFamily = "Verdana, Arial, Helvetica, sans-serif";
   descDoc.body.style.fontSize = "13px";
 }
 
