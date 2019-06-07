@@ -5,14 +5,9 @@ function fixify() {
   let nodes = descDoc.body.getElementsByTagName("*");
   
   for (let i = 0; i < nodes.length; i++) {
-    let l = nodes[i].style.length;
-
-    for (let j = 0; j < l; j++) {
-      if (nodes[i].style[j] !== "font-family" && nodes[i].style[j] !== "font-size")
-        continue;
-
-      nodes[i].style[nodes[i].style[j]] = "";
-    }
+    nodes[i].style.fontFamily = "";
+    nodes[i].style.fontSize = "";
+    nodes[i].style.color = "";
 
     nodes[i].removeAttribute("_mce_style");
     nodes[i].removeAttribute("face");
