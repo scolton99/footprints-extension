@@ -15,7 +15,8 @@
     "img/*",
     "js/categories.js",
     "js/auto_refresh.js",
-    "js/mock_timeout.js"
+    "js/mock_timeout.js",
+    "js/assignees.js"
   ],
   "options_ui": {
     "page": "options.html",
@@ -36,7 +37,8 @@
         "js/fixify.js",
         "js/attachments.js",
         "js/inject_categories.js",
-        "js/assignees.js"
+        "js/inject_assignees.js",
+        "js/fix_desc_opening.js"
       ],
       "run_at": "document_end"
     },

@@ -3,11 +3,9 @@ window.refr = function() {
 
     const projectid = document.querySelector("input[name='PROJECTID']").value;
     if (projectid !== "1") return;
-    console.log("projid ok");
 
     const savedname = document.querySelector("select[name='SAVEDNAME']").value;
     if (savedname === "-1") return;
-    console.log("savedname ok");
 
     data.append("USER", document.querySelector("input[name='USER']").value);
     data.append("PROJECTID", projectid);
