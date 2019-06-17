@@ -68,7 +68,7 @@ function update_assignees() {
         for (let i = 0; i < team.memberIds.length; i++) {
             const id = team.memberIds[i].toLowerCase();
             const name = team.memberRealNames[i].toLowerCase();
-            const team_name = team.name.toLowerCase();
+            const team_name = team.name.toLowerCase().replace(/__b/g, " ").replace(/__u/g, "-");
 
             if (id.includes(search_n) || name.includes(search_n) || team_name.includes(search_n)) {
                 matches.push(team.name);
