@@ -631,3 +631,7 @@ span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type div
 span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type > div {
   padding-top: 0 !important;
 }
+
+a[title="Spell Check"] {
+  display: none;
+}
