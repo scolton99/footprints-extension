@@ -8,6 +8,7 @@ function fixify() {
     nodes[i].style.fontFamily = "";
     nodes[i].style.fontSize = "";
     nodes[i].style.color = "";
+    nodes[i].style.backgroundColor = "";
 
     nodes[i].removeAttribute("_mce_style");
     nodes[i].removeAttribute("face");
