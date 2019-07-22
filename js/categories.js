@@ -11,10 +11,6 @@ if (document.querySelector("select[name='Service__bFamily']")) {
     const f_s = {choices: services.choices, dependencies: services.dependencies};
     const f_c = {choices: categories.choices, dependencies: categories.dependencies};
 
-    const f_data = {service_families: f_sf, services: f_s, categories: f_c};
-    console.log(JSON.stringify(f_data));
-
-
     for (let i = 0; i < service_families.choices.length; i++) {
 
         const service_family = service_families.choices[i].id;
