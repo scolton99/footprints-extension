@@ -8,7 +8,7 @@ input.setAttribute("autocomplete", "off");
 input.style.width = "100%";
 input.addEventListener("input", update_assignees);
 input.style.borderTopRightRadius = 0;
-input.style.borderBottmoRightRadius = 0;
+input.style.borderBottomRightRadius = 0;
 input.style.borderRight = "none";
 
 const td = document.createElement("td");
