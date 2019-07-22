@@ -3,12 +3,14 @@ function save_options() {
   var popupMessage = document.getElementById('popupMessage').checked;
   var autoRefresh = document.getElementById('autoRefresh').checked;
   var showDownloadCategories = document.getElementById('showDownloadCategories').checked;
+  var tabs = document.getElementById('tabs').checked;
 
   chrome.storage.sync.set({
     prettyFootprints: prettyFootprints,
     popupMessage: popupMessage,
     autoRefresh: autoRefresh,
-    showDownloadCategories: showDownloadCategories
+    showDownloadCategories: showDownloadCategories,
+    tabs: tabs
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -27,12 +29,14 @@ function restore_options() {
     prettyFootprints: true,
     popupMessage: false,
     autoRefresh: false,
-    showDownloadCategories: false
+    showDownloadCategories: false,
+    tabs: true
   }, function(items) {
     document.getElementById('prettyFootprints').checked = items.prettyFootprints;
     document.getElementById('popupMessage').checked = items.popupMessage;
     document.getElementById('autoRefresh').checked = items.autoRefresh;
     document.getElementById('showDownloadCategories').checked = items.showDownloadCategories;
+    document.getElementById('tabs').checked = items.tabs;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
