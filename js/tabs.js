@@ -15,7 +15,11 @@ const openInTabs = () => {
     };
 
     window.goToCreate = (project, extraCGI) => {
-        var url = '/MRcgi/MRTicketPage.pl?MAJOR_MODE=CREATE&LASTID=20498&USER=sdc2637&MRP=1ca5bab9e68c04674e9f1dea0702be036';
+        const MRP = /(?:^|&|\?)MRP=(.*?)(?:&|$)/g.exec(detailsBaseURL)[1];
+        const lastID = /(?:^|&|\?)LASTID=(.*?)(?:&|$)/g.exec(detailsBaseURL)[1];
+        const user = /(?:^|&|\?)USER=(.*?)(?:&|$)/g.exec(detailsBaseURL)[1];
+
+        var url = `/MRcgi/MRTicketPage.pl?MAJOR_MODE=CREATE&LASTID=${lastID}&USER=${user}&MRP=${MRP}`;
         url += '&PROJECTID=' + project;
         if (extraCGI)
            url += "&" + extraCGI;
@@ -25,8 +29,6 @@ const openInTabs = () => {
         var winName = 'Create' + randomize;
         window.open(url, winName); 
     };
-
-    console.log("Ran!");
 };
 
 openInTabs();
