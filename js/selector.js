@@ -17,25 +17,26 @@ if (dropdown) {
         chrome.storage.sync.get({
             showLocationWarning: true
         }, ({ showLocationWarning }) => {
-            if ((location === "unknown" || location === null) && showLocationWarning) {
-                const warning = document.createElement("span");
-                warning.textContent = "FP Extension location not selected!";
-                warning.style.marginTop = "10px";
-                warning.style.fontSize = "1.1em";
-                warning.style.fontWeight = "bold";
-                warning.style.color = "red";
-                warning.style.display = "block";
-    
-                const ref = document.querySelector("fieldset > div.cell[title='Location']");
-                ref.appendChild(warning);
-    
-                return;
-            }
-    
-            fpLocation = locations[location];
-            dropdown.value = fpLocation;
-        })
+            if (showLocationWarning) {
+                if ((location === "unknown" || location === null)) {
+                    const warning = document.createElement("span");
+                    warning.textContent = "FP Extension location not selected!";
+                    warning.style.marginTop = "10px";
+                    warning.style.fontSize = "1.1em";
+                    warning.style.fontWeight = "bold";
+                    warning.style.color = "red";
+                    warning.style.display = "block";
         
+                    const ref = document.querySelector("fieldset > div.cell[title='Location']");
+                    ref.appendChild(warning);
+        
+                    return;
+                }
+        
+                fpLocation = locations[location];
+                dropdown.value = fpLocation;
+            }  
+        });
     });
 }
 
