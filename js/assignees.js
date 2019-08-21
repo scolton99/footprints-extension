@@ -13,6 +13,7 @@ if (pmember) {
     input.style.borderTopRightRadius = 0;
     input.style.borderBottomRightRadius = 0;
     input.style.borderRight = "none";
+    input.setAttribute("placeholder", "Search for a NetID, name, or team name");
     
     const td = document.createElement("td");
     const tr = document.createElement("tr");

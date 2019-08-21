@@ -107,6 +107,16 @@
         "js/inject_tabs.js"
       ],
       "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://itsm.northwestern.edu/MRcgi/MRcheckboxprocess.pl*",
+        "https://itsm-fp.northwestern.edu/MRcgi/MRcheckboxprocess.pl*"
+      ],
+      "js": [
+        "js/inject_assignees.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "permissions": [
