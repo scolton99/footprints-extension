@@ -82,14 +82,32 @@ if (document.querySelector("select[name='Service__bFamily']")) {
 
     }
 
-    window.pick_cat = function() {
+    window.reset_category_search = () => {
+        const preview = document.getElementById("category_preview");
+        
+        while (preview.firstChild)
+            preview.removeChild(preview.firstChild);
+
+        const default_option = document.createElement("option");
+        default_option.setAttribute("value", "nil");
+        default_option.textContent = "Matching categories will appear here";
+
+        preview.appendChild(default_option);
+
+        preview.style.color = "#888";
+    };
+
+    window.pick_cat = () => {
         const search = document.querySelector("#category_search").value;
         const preview = document.querySelector("#category_preview");
 
         if (search === "") {
             preview.value = "";
+            reset_category_search();
             return;
         }
+
+        preview.style.color = "#000";
 
         const terms = search.split(" ");
 
@@ -153,9 +171,12 @@ if (document.querySelector("select[name='Service__bFamily']")) {
         }
     };
 
-    window.pick_cat_preview = function() {
+    window.pick_cat_preview = () => {
         const preview = document.querySelector("#category_preview");
         const key = preview.value;
+
+        if (preview.value === "nil")
+            return;
 
         const service_family_dropdown = document.querySelector("select[name='Service__bFamily']");
         const service_dropdown = document.querySelector("select[name='Service']");
@@ -193,6 +214,7 @@ if (document.querySelector("select[name='Service__bFamily']")) {
     search_box.setAttribute("type", "text");
     search_box.style.width = "98.6%";
     search_box.setAttribute("autocomplete", "off");
+    search_box.setAttribute("placeholder", "Search for a category here...");
 
     const preview = document.createElement("select");
     preview.id = "category_preview";
@@ -211,4 +233,6 @@ if (document.querySelector("select[name='Service__bFamily']")) {
     n_tr.appendChild(n_td);
 
     tbody.insertBefore(n_tr, tr);
+
+    reset_category_search();
 }
