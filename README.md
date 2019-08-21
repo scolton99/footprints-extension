@@ -90,7 +90,7 @@ purple theme. When the extension is installed, the favicon in the browser looks 
 The Footprints WYSIWYG editor has plenty of glitches in its behavior. Often, a description that looked good while typing appears different
 after being submitted and results in tickets that have strange discrepancies in formatting, like this one:
 
-![Fixify](https://imgur.com/xlVx6DD.jpg)
+![Poorly Formatted Ticket](https://imgur.com/ujxhjEj.jpg)
 
 This extension adds what we lovingly call the **Fixify** button to the description editor. When you click the Fixify button, the following
 happens to your ticket description:
@@ -99,6 +99,8 @@ happens to your ticket description:
 * The color of all text in the ticket is set to black (except for links).
 
 Of note, **bolded**, *italicized*, or indented text will remain bolded, italicized, or indented. All of the above changes will still be made.
+
+![Fixify](https://imgur.com/xlVx6DD)
 
 Even when it appears that the formatting of a new ticket description is okay, we recommend using the Fixify button to ensure that all redundant
 and unnecessary formatting is cleared from the text before submitting. Often, the offending formatting tags are already in the text but don't 
