@@ -100,11 +100,7 @@ happens to your ticket description:
 
 Of note, **bolded**, *italicized*, or indented text will remain bolded, italicized, or indented. All of the above changes will still be made.
 
-<<<<<<< HEAD
 ![Fixify](https://imgur.com/xlVx6DD.jpg)
-=======
-![Fixify](https://imgur.com/xlVx6DD)
->>>>>>> 3c8bd87b8c1825f58fc30a934596e3fb0f13a146
 
 Even when it appears that the formatting of a new ticket description is okay, we recommend using the Fixify button to ensure that all redundant
 and unnecessary formatting is cleared from the text before submitting. Often, the offending formatting tags are already in the text but don't 
