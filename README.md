@@ -106,6 +106,28 @@ Even when it appears that the formatting of a new ticket description is okay, we
 and unnecessary formatting is cleared from the text before submitting. Often, the offending formatting tags are already in the text but don't 
 cause an issue until the email has already been sent to the user. Fixify prevents that.
 
+### Jump to Ticket Shortcuts
+This extension adds a few shortcuts to jump to tickets quickly. From anywhere within the browser, you can do one of three things to jump directly
+to a specific ticket:
+* Enter the ticket number in the extension menu.
+* Highlight the ticket number in text and select "Jump to ticket" from the context menu.
+* Type "FP [ticket number]" in Chrome's Omnibox.
+
+### Extension Menu
+Simply click on the extension menu in the top right, enter the ticket number in the "Jump to ticket" box, and select "Go".
+
+![Extension Menu Jump](https://imgur.com/9H1T0Nr.jpg)
+
+### Context Menu
+Highlight a ticket number in text anywhere in the browser, right click to show the context menu, and select "Jump to ticket".
+
+![Context Menu Jump](https://imgur.com/Xs9QRvS.jpg)
+
+### Omnibox
+Go to Chrome's Omnibox, clear the contents, and then type "FP [ticket number]" (e.g. "FP 839901") and press "Return" or "Enter".
+
+![Omnibox Jump](https://imgur.com/e6kq1X5.jpg)
+
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
 [here](https://chrome.google.com/webstore/detail/footprints-selector/bhcajiiignledggebpaalkpcccbjohhc).
