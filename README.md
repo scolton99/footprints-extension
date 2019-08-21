@@ -1,26 +1,38 @@
 # Footprints Extension
 A Chrome extension written for Northwestern IT to extend the functionality of the Footprints IT Service Manager.
 
-## About
+## Features
 This extension provides a number of features that improve the experience of using Footprints.
 
-Primarily, the extension detects your location as Library or Sherman, based on the IP address of your computer. 
-If your location cannot be determined, it asks for it on the Footprints login screen. This is saved to Chrome storage,
-and the extension then automatically populates the Walk-In Location field when editing tickets.
+### Location Detection (TSC Tier 1 Only)
+Tier 1 of the IT Support Center is required to set the **Location** field on all tickets that we complete.
+To streamline this process, the extension uses the subnet of the computer that it is currently running on to determine
+whether the user is at our 1800 Sherman location or our University Library location and it automatically sets the location
+accordingly on all tickets created or edited during that session.
 
-The extension also applies a more aesthetically pleasing theme to the ticket page and implements some new functionality
-such as the "Fixify" button to clean up emails before they are sent and the ability to view image and text attachments by 
-hovering over them.
+In the event that the location cannot be accurately determined (for example, if the user is on the wireless network), a warning
+is shown that a location has not been automatically selected, and the location can be set manually through the menu under the 
+extension's icon.
 
-We updated the Northwestern IT splash page ("CONWEB") to include a banner telling consultants to use this. The newest 
-version of the extension removes that banner.
+**For non-Tier 1 users of the extension**, we recommend that you turn off the location features in the extension settings. 
+This will disable the warning and it will stop the extension from automatically setting the Location field.
 
-Because the labels that we use to categorize our tickets can be difficult to remember, there is now a search box for 
-categorizations directly above the Service Family field. 
+### Aesthetic Changes
+The extension also applies a more aesthetically pleasing theme to the ticket page. This can be disabled in the extension's 
+settings.
+
+### Conweb Interaction (TSC Tier 1 Only)
+[Conweb](https://kb.northwestern.edu/internal/conweb) will display a warning by default that this extension is not installed. 
+Once this extension is installed and Conweb is refreshed, the message will be removed.
+
+### Category Search
+Since Footprints has [nearly 1000](https://kb.northwestern.edu/internal/87181) distinct categories, it can be difficult to 
+remember where all of them are or even to know that some of them exist. This extension provides a method of searching for 
+categories and displaying the closest matching ones.
 
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
 [here](https://chrome.google.com/webstore/detail/footprints-selector/bhcajiiignledggebpaalkpcccbjohhc).
 
 ## Acknowledgements
-Thank you to [@pavilion99](https://github.com/pavilion99) for your contributions.
+Thank you to [@tuchandra](https://github.com/tuchandra) for the original idea to create a Chrome Extension for Footprints.
