@@ -7,4 +7,3 @@ chrome.storage.sync.get({
         document.documentElement.appendChild(tabsScript);
     }
 });
-

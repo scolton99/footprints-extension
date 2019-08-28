@@ -1,7 +1,7 @@
 function save_options() {
   var prettyFootprints = document.getElementById('prettyFootprints').checked;
   var popupMessage = document.getElementById('popupMessage').checked;
-  var autoRefresh = document.getElementById('autoRefresh').checked;
+  // var autoRefresh = document.getElementById('autoRefresh').checked;
   var showDownloadCategories = document.getElementById('showDownloadCategories').checked;
   var tabs = document.getElementById('tabs').checked;
   var showLocationWarning = document.getElementById('locationWarning').checked;
@@ -9,7 +9,7 @@ function save_options() {
   chrome.storage.sync.set({
     prettyFootprints: prettyFootprints,
     popupMessage: popupMessage,
-    autoRefresh: autoRefresh,
+    // autoRefresh: autoRefresh,
     showDownloadCategories: showDownloadCategories,
     tabs: tabs,
     showLocationWarning: showLocationWarning
@@ -30,14 +30,14 @@ function restore_options() {
   chrome.storage.sync.get({
     prettyFootprints: true,
     popupMessage: false,
-    autoRefresh: false,
+    // autoRefresh: false,
     showDownloadCategories: false,
     tabs: true,
     showLocationWarning: true
   }, function(items) {
     document.getElementById('prettyFootprints').checked = items.prettyFootprints;
     document.getElementById('popupMessage').checked = items.popupMessage;
-    document.getElementById('autoRefresh').checked = items.autoRefresh;
+    // document.getElementById('autoRefresh').checked = items.autoRefresh;
     document.getElementById('showDownloadCategories').checked = items.showDownloadCategories;
     document.getElementById('tabs').checked = items.tabs;
     document.getElementById('locationWarning').checked = items.showLocationWarning;
