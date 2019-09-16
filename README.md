@@ -113,6 +113,10 @@ to a specific ticket:
 * Highlight the ticket number in text and select "Jump to ticket" from the context menu.
 * Type "FP [ticket number]" in Chrome's Omnibox.
 
+### CONDUITS Work Order Contact Display Changes
+This extension greys out the names of Feinberg IT contacts in the list of CONDUITS Work Order Contacts since these names are rarely relevant and
+should not be given to the users as valid work order contacts. This setting can be disabled in the options.
+
 ### Extension Menu
 Simply click on the extension menu in the top right, enter the ticket number in the "Jump to ticket" box, and select "Go".
 

@@ -101,4 +101,18 @@ const updateBadge = () => {
     });
 }
 
+const updateFSM = async () => {
+    const res = await fetch("https://cors-anywhere.herokuapp.com/www.feinberg.northwestern.edu/it/about/our-staff.html");
+    const str = await res.text();
+    const parser = new DOMParser();
+    const fsmdoc = parser.parseFromString(str, 'text/html');
+
+    const fsmstaff = Array.from(fsmdoc.querySelectorAll("div.info > p > strong")).map(x => x.textContent.replace("  ", " "));
+
+    chrome.storage.local.set({
+        fsmstaff: fsmstaff
+    });
+}
+
 updateBadge();
+updateFSM();

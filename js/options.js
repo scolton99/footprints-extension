@@ -5,6 +5,7 @@ function save_options() {
   var showDownloadCategories = document.getElementById('showDownloadCategories').checked;
   var tabs = document.getElementById('tabs').checked;
   var showLocationWarning = document.getElementById('locationWarning').checked;
+  var fixconduits = document.getElementById('fixconduits').checked;
 
   chrome.storage.sync.set({
     prettyFootprints: prettyFootprints,
@@ -12,7 +13,8 @@ function save_options() {
     // autoRefresh: autoRefresh,
     showDownloadCategories: showDownloadCategories,
     tabs: tabs,
-    showLocationWarning: showLocationWarning
+    showLocationWarning: showLocationWarning,
+    fixconduits: fixconduits
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -33,7 +35,8 @@ function restore_options() {
     // autoRefresh: false,
     showDownloadCategories: false,
     tabs: true,
-    showLocationWarning: true
+    showLocationWarning: true,
+    fixconduits: true
   }, function(items) {
     document.getElementById('prettyFootprints').checked = items.prettyFootprints;
     document.getElementById('popupMessage').checked = items.popupMessage;
@@ -41,6 +44,7 @@ function restore_options() {
     document.getElementById('showDownloadCategories').checked = items.showDownloadCategories;
     document.getElementById('tabs').checked = items.tabs;
     document.getElementById('locationWarning').checked = items.showLocationWarning;
+    document.getElementById('fixconduits').checked = items.fixconduits;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
