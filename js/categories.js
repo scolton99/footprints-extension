@@ -2,6 +2,13 @@ const service_families = fbConfig.fields.Service__bFamily;
 const services = fbConfig.fields.Service;
 const categories = fbConfig.fields.Category;
 
+const aliases = {
+    "Identity Management and Authentication → Multi-Factor Authentication (Duo) → Call Authentication": ["mfa"],
+    "Identity Management and Authentication → Multi-Factor Authentication (Duo) → Mobile App": ["mfa"],
+    "Identity Management and Authentication → Multi-Factor Authentication (Duo) → System Configuration": ["mfa"],
+    "Identity Management and Authentication → Multi-Factor Authentication (Duo) → User Activation/Registration": ["mfa"]
+};
+
 const cat_map = {};
 
 const sep = " → ";
@@ -125,7 +132,7 @@ if (document.querySelector("select[name='Service__bFamily']")) {
             let has = true;
 
             for (const term of terms) {
-                has = has && key.toLowerCase().includes(term.toLowerCase());
+                has = has && (key.toLowerCase().includes(term.toLowerCase()) || (aliases[key] && aliases[key].includes(term.toLowerCase())));
             }
 
             if (has) {
