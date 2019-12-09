@@ -1,130 +1,129 @@
 {
-  "manifest_version": 2,
-  "name": "Footprints Extension",
-  "version": "3.2",
-  "author": "Tushar Chandra, Spencer Colton",
-  "description": "Adds improvements to the BMC Footprints IT Service Manager.",
-  "icons": {
-    "16": "img/favicon-16x16.png",
-    "32": "img/favicon-32x32.png",
-    "128": "img/icon-128.png"
-  },
-  "web_accessible_resources": [
-    "vendor/*",
-    "css/*",
-    "img/*",
-    "js/categories.js",
-    "js/auto_refresh.js",
-    "js/mock_timeout.js",
-    "js/assignees.js",
-    "js/download_categories.js",
-    "js/tabs.js"
-  ],
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": false
-  },
-  "browser_action": {
-    "default_popup": "ui.html"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
-        "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
-      ],
-      "js": [
-        "js/selector.js",
-        "js/pauseunpause.js",
-        "js/fixify.js",
-        "js/attachments.js",
-        "js/inject_categories.js",
-        "js/inject_assignees.js",
-        "js/fix_desc_opening.js",
-        "js/inject_download_categories.js"
-      ],
-      "run_at": "document_end"
+    "manifest_version": 2,
+    "name": "Footprints Extension",
+    "version": "3.2.1",
+    "author": "Tushar Chandra, Spencer Colton",
+    "description": "Adds improvements to the BMC Footprints IT Service Manager.",
+    "icons": {
+        "16": "img/favicon-16x16.png",
+        "32": "img/favicon-32x32.png",
+        "128": "img/icon-128.png"
     },
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/*",
-        "https://itsm-fp.northwestern.edu/*"
-      ],
-      "js": [
-        "js/favicon.js"
-      ],
-      "run_at": "document_start"
+    "web_accessible_resources": [
+        "vendor/*",
+        "css/*",
+        "img/*",
+        "js/categories.js",
+        "js/auto_refresh.js",
+        "js/mock_timeout.js",
+        "js/assignees.js",
+        "js/download_categories.js",
+        "js/tabs.js"
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
     },
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
-        "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
-      ],
-      "js": [
-        "js/inject_css.js"
-      ],
-      "run_at": "document_start"
+    "browser_action": {
+        "default_popup": "ui.html"
     },
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
-        "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
-      ],
-      "js": [
-        "js/choose_location.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "https://kb.northwestern.edu/internal/conweb",
-        "https://kb.northwestern.edu/internal/71903",
-        "https://kb.northwestern.edu/internal/page.php?id=71903"
-      ],
-      "js": [
-        "js/disable_conweb_banner.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/MRcgi/MRhomepage.pl*",
-        "https://itsm-fp.northwestern.edu/MRcgi/MRhomepage.pl*"
-      ],
-      "js": [
-        "js/popup.js",
-        "js/inject_mock_timeout.js",
-        "js/inject_tabs.js"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "matches": [
-        "https://itsm.northwestern.edu/MRcgi/MRcheckboxprocess.pl*",
-        "https://itsm-fp.northwestern.edu/MRcgi/MRcheckboxprocess.pl*"
-      ],
-      "js": [
-        "js/inject_assignees.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "https://www.it.northwestern.edu/conduits/conduits-work-order-contact-list.html"
-      ],
-      "js": [
-        "js/conduits.js"
-      ],
-      "run_at": "document_end"
+    "content_scripts": [{
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
+            ],
+            "js": [
+                "js/selector.js",
+                "js/pauseunpause.js",
+                "js/fixify.js",
+                "js/attachments.js",
+                "js/inject_categories.js",
+                "js/inject_assignees.js",
+                "js/fix_desc_opening.js",
+                "js/inject_download_categories.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/*",
+                "https://itsm-fp.northwestern.edu/*"
+            ],
+            "js": [
+                "js/favicon.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
+            ],
+            "js": [
+                "js/inject_css.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
+            ],
+            "js": [
+                "js/choose_location.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://kb.northwestern.edu/internal/conweb",
+                "https://kb.northwestern.edu/internal/71903",
+                "https://kb.northwestern.edu/internal/page.php?id=71903"
+            ],
+            "js": [
+                "js/disable_conweb_banner.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRhomepage.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRhomepage.pl*"
+            ],
+            "js": [
+                "js/popup.js",
+                "js/inject_mock_timeout.js",
+                "js/inject_tabs.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://itsm.northwestern.edu/MRcgi/MRcheckboxprocess.pl*",
+                "https://itsm-fp.northwestern.edu/MRcgi/MRcheckboxprocess.pl*"
+            ],
+            "js": [
+                "js/inject_assignees.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://www.it.northwestern.edu/conduits/conduits-work-order-contact-list.html"
+            ],
+            "js": [
+                "js/conduits.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "contextMenus"
+    ],
+    "omnibox": { "keyword": "fp" },
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
     }
-  ],
-  "permissions": [
-    "storage",
-    "contextMenus"
-  ],
-  "omnibox": {"keyword": "fp"},
-  "background": {
-    "scripts": ["js/background.js"],
-    "persistent": false
-  }
 }
