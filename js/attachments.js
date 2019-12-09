@@ -1,14 +1,13 @@
 let attachments = document.querySelectorAll("table#attachments_summary a");
 
-attachments.forEach(function (e) {
-    if (e.textContent !== "Download") {
+attachments.forEach(function(e) {
+    if (e.textContent !== "Download")
         return;
-    }
 
     const oldEvent = e.getAttribute("onclick");
 
     // Get the arguments to the function call in the existing onclick attr
-    const arguments = oldEvent.split("(")[1];
+    const arguments = oldEvent.substring(13, oldEvent.length - 1);
 
     // Split the arguments to the function into a list of arguments
     const dirtyArgs = arguments.split(", ");
@@ -21,7 +20,7 @@ attachments.forEach(function (e) {
     }
 
     let query_param_tuples = args[1].split('&');
-    const allowed_query_keys = ["USER","PROJECTID","MRP","EXT_LINK","CUSTM","SOLUTIONS_FROM_OTHER_PROJ","ORIGINAL_PROJECT","MR","ATTACHMENT_NAME","SESS_ID"];
+    const allowed_query_keys = ["USER", "PROJECTID", "MRP", "EXT_LINK", "CUSTM", "SOLUTIONS_FROM_OTHER_PROJ", "ORIGINAL_PROJECT", "MR", "ATTACHMENT_NAME", "SESS_ID"];
     let final_qp = [];
     for (let i = 0; i < query_param_tuples.length; i++) {
         const key_val = query_param_tuples[i].split("=");
