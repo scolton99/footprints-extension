@@ -59,6 +59,12 @@ or "barnick" (part of a member's name).
 
 ![Assignee Search by Member NetID](https://imgur.com/wavaW6E.jpg)
 
+### Template Search
+To make finding a Quick Issue Template easier, the extension adds a search bar to the left of the template menu. The template list will be 
+filtered to show only templates whose names contain the entered text (case-insensitive).
+
+![Template Search](https://imgur.com/XfrBSV2.jpg)
+
 ### Tabbed Browsing Changes
 Generally, because of the way that Footprints was written, tickets end up opening in new windows the majority of the time,
 regardless of whether your browser is configured to prefer new tabs or new windows. This extension changes that and makes it
@@ -131,6 +137,7 @@ Highlight a ticket number in text anywhere in the browser, right click to show t
 Go to Chrome's Omnibox, clear the contents, and then type "FP [ticket number]" (e.g. "FP 839901") and press "Return" or "Enter".
 
 ![Omnibox Jump](https://imgur.com/e6kq1X5.jpg)
+
 
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
