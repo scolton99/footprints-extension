@@ -466,6 +466,10 @@ div#TableActions > table span.navarrow {
   background-color: #333;
 }
 
+.numara-grid .x-grid3-header {
+  background: #aaa;
+}
+
 td.loud {
   color: #fff !important;
 }
@@ -488,4 +492,168 @@ td.loud {
 
 .numara-grid .x-grid3-cell a:hover {
   text-decoration: underline;
+}
+
+.numara-grid .x-grid3-scroller {
+  background-color: rgb(34, 34, 34);
+}
+
+.numara-grid .x-grid3-hd-row td.x-grid3-hd.x-grid3-cell {
+  border-color: #aaa;
+  background: #aaa;
+}
+
+div#QuickSearchMenu div.bd > ul.first-of-type,
+div#menu_advancedsearch div.bd > ul.first-of-type  {
+  background-color: #545760;
+}
+
+div#QuickSearchMenu div.bd > ul.first-of-type > li > a.yuimenuitemlabel,
+div#menu_advancedsearch div.bd > ul.first-of-type > li > a.yuimenuitemlabel{
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(204, 204, 204);
+}
+
+div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem,
+div#menu_advancedsearch div.bd > ul.first-of-type > li.yuimenuitem {
+  transition: background-color 0.2s ease-out;
+}
+
+div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-selected,
+div#menu_advancedsearch div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-selected {
+  background-color: #444;
+}
+
+div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-selected a,
+div#menu_advancedsearch div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-selected a {
+  color: rgb(204, 204, 204);
+}
+
+div#QuickSearchMenu > div#basicmenu > div.bd,
+div#menu_advancedsearch div.bd {
+  border-radius: 5px;
+  border-color: rgb(68, 68, 68);
+  border-style: solid;
+  box-shadow: 2px 2px 10px -1px #000;
+  background-color: transparent;
+}
+
+div#menu_advancedsearch {
+  background-color: transparent;
+}
+
+body div.pageHeader {
+  font-size: 1.7em;
+  padding: 1em;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #c17fff;
+}
+
+div.pageHeader + table.dialog {
+  background-color: transparent;
+  margin: auto;
+  width: 80%;
+  min-width: 300px;
+  border: none;
+  font-size: 1.15em;
+}
+
+div.pageHeader + table.dialog b,
+div.pageHeader + table.dialog p {
+  color: rgb(204, 204, 204);
+}
+
+div.pageHeader + table.dialog a {
+  color: #c17fff;
+}
+
+div.pageHeader + table.dialog a:hover {
+  color: #dcb7ff;
+}
+
+div.pageHeader + table.dialog a[href="/MRcgi/MRentrancePage.pl"] {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+body div#Widgets {
+  max-width: 100%;
+}
+
+body table.dialog {
+  background-color: transparent;
+  color: #fff;
+}
+
+table.straightenColumns {
+  color: rgb(204, 204, 204);
+}
+
+table.straightenColumns input[type="TEXT"],
+table.straightenColumns input:not([type]),
+table.straightenColumns select,
+td.dialogMainContent input[type="TEXT"],
+td.dialogMainContent input:not([type]),
+td.dialogMainContent select {
+  background-color: #3b3d44;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+table.straightenColumns input[type="TEXT"]:focus {
+  background-color: #545760;
+}
+
+td > div.tabHeightLimiter {
+  border: none;
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+table#Public__bKB__bApproval__bDate table,
+table#Public__bKB__bApproval__bDate2 table,
+td.fieldInput > table,
+div#DateSearchInputDiv2 > table,
+table#SLA__bResponse__bTime table,
+div#DateSearchInputDiv > table,
+table#SLA__bResponse__bTime2 table,
+div#DateSearchInputDiv1 > table,
+table#SLA__bDue__bDate table,
+table#SLA__bDue__bDate2 table,
+div.indented table,
+table.indented {
+  color: rgb(204, 204, 204);
+}
+
+table td.pageHeader {
+  display: none !important;
+}
+
+table.dialog.tabbed {
+  border: none;
+}
+
+p.note {
+  color: #ff5959;
+}
+
+a[title="GO"] span {
+  color: #fff;
+}
+
+div#tabMenu div.tab {
+  background-image: none;
+  background-color: #333;
+  border: 1px solid #444;
+  padding: 3px;
+  border-radius: 5px;
+  color: #fff
+}
+
+div#tabMenu div.tab:hover {
+  background-color: #555;
 }

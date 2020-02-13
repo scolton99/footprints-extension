@@ -46,6 +46,10 @@ const fix_homepage = () => {
 
   document.getElementById("splitbutton1-button").style.backgroundImage = "url(\"" + chrome.extension.getURL('img/split-button-arrow-dark.png') + "\")";
 
+  const style = document.createElement("style");
+  style.textContent = "div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-checked { background-image: url(\"" + chrome.extension.getURL("img/menuitem_checkbox.png") + "\"); }";
+  document.body.appendChild(style);
+
   injectHomepage();
   arrows();
 }
