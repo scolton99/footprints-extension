@@ -1,0 +1,13 @@
+html > body.DocumentWidth {
+  margin: 0;
+  width: 100% !important;
+}
+
+html > body.DocumentWidth > div#ContentWrapper {
+  width: auto !important;
+}
+
+div#ContentWrapper > script + div > div:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 10px;
+}

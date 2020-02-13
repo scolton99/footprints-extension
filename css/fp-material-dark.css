@@ -11,8 +11,8 @@ table.dialog {
 }
 
 #ContentWrapper {
-  box-shadow:0px 0px 8px 2px rgba(0, 0, 0, 0.2) !important;
-	margin: 10px;
+  box-shadow: none !important;
+	margin: 0;
 	height: auto !important;
 	min-height: initial !important;
   min-width: 0px;
@@ -24,6 +24,10 @@ span#controlPanel table tr:first-of-type td:last-of-type span > div {
 
 div#editButton img, div#detailsButton img, div#copyMoveButton img, div#iLinkButton img, div#subtaskMenuButton img, div#globalSubButton img, div#deleteButton img, div#reportButton img {
 	display: none;
+}
+
+div#copyMoveButton span, div#iLinkButton span, div#editButton span, div#subtaskMenuButton span, div#globalSubButton span, div#deleteButton span, div#reportButton span {
+  color: #c17fff;
 }
 
 span#controlPanel {
@@ -105,8 +109,7 @@ div#TimeTracking_ecTable, table#TimeTracking_ecTable, div#CILinks_ecTable, table
 }
 
 div#controlPanelHolder div.button_on, select[name="QUICKCREATE"] + table div.button_on, input[name="time"] + table div.button_on, a[title="Select Contact"] div.button_on, div#historyButton.button_on, div#clearButton.button_on, div#viewCurrentInternal__bNotes.button_on, div#goButtonBottom.button_on, a[title="Check Availability"] > div.button_on, a[title="Help"] > div.button_on, div#newAttach.button_on, a[title="Spell Check"] > div.button_on {
-  border: 1px solid #ccc !important;
-	background-color: #E4E0EE;
+  color: #dcb7ff;
 }
 
 div#newAttach {
@@ -126,8 +129,8 @@ div#controlPanelHolder div.button_off, div#controlPanelHolder div.button_on, sel
 	flex-direction: column;
 	justify-content: center;
   margin-right: 5px;
-	transition: background-color 0.15s ease-in;
-  border: 1px solid #ccc;
+	transition: color 0.15s ease-in;
+  border: 1px solid #555;
 }
 
 div#goButtonBottom {
@@ -146,7 +149,7 @@ div#pauseunpause, div#pauseunpause.button_on, div#pauseunpause.button_off, div#p
 }
 
 a[title="Select Contact"] {
-  color: #4E2A84 !important;
+  color: #c17fff !important;
 }
 
 a[title="Select Contact"] div span::before {
@@ -158,7 +161,7 @@ a[title="Select Contact"] div span::before {
 }
 
 div#newAttach {
-  color: #4E2A84;
+  color: #c17fff;
 }
 
 div#newAttach span::before {
@@ -190,7 +193,7 @@ div#StaticAreaDiv a[title="Spell Check"] > div.button_on {
 div.indented a[title="Spell Check"] > div, div#Internal__bNotes_originalDataDiv ~ table a[title='Spell Check'] > div {
   border: none;
   margin-top: 5px;
-  color: #4E2A84;
+  color: #c17fff;
   flex-direction: row;
   align-items: center;
 }
@@ -218,7 +221,7 @@ a[title="Spell Check"] > div::before {
 }
 
 a[title="Check Availability"] > div {
-  color: #4E2A84;
+  color: #c17fff;
   margin: 0 !important;
 }
 
@@ -239,7 +242,7 @@ div#clearButton span::before {
 }
 
 div#historyButton, div#clearButton, div#viewCurrentInternal__bNotes {
-  color: #4E2A84;
+  color: #c17fff;
 }
 
 div#viewCurrentInternal__bNotes {
@@ -320,6 +323,7 @@ span#controlPanel td[nowrap] > span:first-of-type {
 
 span#controlPanel td[nowrap] table a[title="Previous"] div, span#controlPanel td[nowrap] table a[title="Next"] div {
   margin-left: 5px;
+  color: #c17fff;
 }
 
 span#controlPanel td[nowrap] table a[title="Previous"] div::before {
@@ -379,6 +383,10 @@ div#gobutton img, div#goButtonBottom img {
   display: none;
 }
 
+div#gobutton span, div#goButtonBottom span, div#detailsButton span {
+  color: #c17fff;
+}
+
 span#goButton_textSpan::before, span#goButtonBottom_textSpan::before {
   content: '\f0c7';
   font-family: 'Font Awesome 5 Free';
@@ -389,6 +397,7 @@ span#goButton_textSpan::before, span#goButtonBottom_textSpan::before {
 
 table.dialogHeading {
   background-image: none;
+  background: #333;
 }
 
 div.ecDialogHeadingOpen td.dialogTitle_ec, div.ecDialogHeading td.dialogTitle_ec {
@@ -485,12 +494,15 @@ table#IssueInformation_ecTable > tbody > tr > td.dialogMainContent > table > tbo
 div#Internal__bNotes {
   width: 100%;
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   box-sizing: border-box;
 }
 
 textarea#Internal__bNotes {
   width: 100%;
+  background-color: #3b3d44;
+  border: 1px solid #444;
+  color: #fff;
 }
 
 table#IssueInformation_ecTable div[title="HR3"] {
@@ -499,6 +511,7 @@ table#IssueInformation_ecTable div[title="HR3"] {
 
 div.ecDialogHeading > table {
   padding: 6px;
+  color: #c17fff;
 }
 
 span#completeToolbar > table {
@@ -526,6 +539,7 @@ div#StaticAreaDiv table.dialogHeading {
 div#StaticAreaDiv table.dialogHeading td.dialogTitle {
   font-size: 1.15em;
   width: 100% !important;
+  color: #c17fff;
 }
 
 fieldset label {
@@ -545,7 +559,16 @@ table#IssueInformation_ecTable fieldset#row-3 {
 input[type="text"], input[type="email"], input.ticketField, select:not(#descIndicator):not(#pmember):not(#assgnee) {
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
+  background-color: #3b3d44;
+  color: #fff;
+  transition: background-color 0.2s ease-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input.ticketField:focus {
+  background-color: #545760;
 }
 
 select[name="QUICKCREATE"]:not(#descIndicator) {
@@ -568,6 +591,15 @@ select[name="QUICKCREATE"] + table span::before {
 	font-size: 16px;
 	position: relative;
   font-weight: 900;
+}
+
+select[name="QUICKCREATE"] + table span {
+  color: #c17fff;
+  transition: color 0.15s ease-in-out;
+}
+
+select[name="QUICKCREATE"] + table span:hover {
+  color: #dcb7ff;
 }
 
 select[name="QUICKCREATE"] + table div, select[name="QUICKCREATE"] + table div.button_off, select[name="QUICKCREATE"] + table div.button_on {
@@ -633,4 +665,45 @@ span#controlPanel > table > tbody > tr > td:last-of-type > span:last-of-type > d
 
 a[title="Spell Check"] {
   display: none;
+}
+
+table.dialog, body, div#ContentWrapper {
+  background-color: #202124;
+  color: rgb(204,204,204);
+}
+
+*.mandatory:not(html) {
+  color: #ff5959;
+}
+
+body a[href] {
+  color: #c17fff;
+}
+
+select[name="ASSIGNTO"] {
+  background-color: #3b3d44;
+  border-color: #444;
+  color: #fff;
+}
+
+select#pmember[name="fieldArea0"] > option.member {
+  color: rgb(204,204,204);
+}
+
+select#pmember[name="fieldArea0"] {
+  background-color: #202124;
+}
+
+fieldset#row-0 > div.cell, fieldset#row-1 > div.cell, fieldset#row-3 > div.cell {
+  background-color: transparent !important;
+}
+
+#category_preview {
+  color: #fff !important;
+}
+
+div.fieldInput#Internal__bNotes > textarea:first-child {
+  background-color: #3b3d44 !important;
+  border: 1px solid #444 !important;
+  color: #fff;
 }

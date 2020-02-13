@@ -28,7 +28,7 @@ if (pmember) {
     fas.style.lineHeight = "27px";
     fas.style.paddingLeft = "5px";
     fas.style.cursor = "pointer";
-    fas.style.border = "1px solid #ccc";
+    fas.style.border = "1px solid #444";
     fas.style.borderLeft = "none";
     fas.style.borderTopRightRadius = "4px";
     fas.style.borderBottomRightRadius = "4px";

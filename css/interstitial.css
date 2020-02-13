@@ -1,0 +1,27 @@
+html > body > *:not(.lds-dual-ring) {
+  display: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+html > body {
+  background-color: #202124;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body > .lds-dual-ring {
+  height: 5em;
+  width: 5em;
+}
+
+body > .lds-dual-ring::after {
+  height: 60px;
+  width: 60px;
+  border-width: 5px;
+  margin: 0;
+}
