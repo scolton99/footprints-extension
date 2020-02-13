@@ -1,11 +1,12 @@
 function injectStyles(url) {
   chrome.storage.sync.get({
-    prettyFootprints: true
+    prettyFootprints: true,
+    dark: false
   }, function(items) {
-    if (url.endsWith('fp-material.css'))
+    if ((!items.prettyFootprints || items.dark) && url.endsWith('fp-material.css'))
       return;
 
-    if (!items.prettyFootprints && url.endsWith('fp-material.css'))
+    if (url.endsWith('fp-material-dark.css') && !items.dark)
       return;
 
     if (!document.body) {

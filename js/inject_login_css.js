@@ -6,9 +6,17 @@ function injectLoginStyles(url) {
 }
 
 function injectLogin() {
-  injectLoginStyles(chrome.extension.getURL('css/login.css'));
-
-  document.querySelector("div#logoTopLogin > img").src = chrome.extension.getURL('img/ITSM-Brand-Dark.png');
+  chrome.storage.sync.get({
+    dark: false
+  }, items => {
+    if (!items.dark)
+      return;
+    
+    injectLoginStyles(chrome.extension.getURL('css/login.css'));
+    injectLoginStyles(chrome.extension.getURL('css/login_dark.css'));
+  
+    document.querySelector("div#logoTopLogin > img").src = chrome.extension.getURL('img/ITSM-Brand-Dark.png');    
+  });
 }
 
 window.addEventListener("DOMContentLoaded", injectLogin);

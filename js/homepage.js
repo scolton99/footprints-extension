@@ -6,7 +6,19 @@ function injectHomepageStyles(url) {
 }
 
 function injectHomepage() {
+  if (!document.body) 
+    return window.setTimeout(injectHomepage, 10);
+
   injectHomepageStyles(chrome.extension.getURL('vendor/fontawesome/css/all.min.css'));
+
+  chrome.storage.sync.get({
+    dark: false
+  }, items => {
+    if (!items.dark)
+      return;
+    
+    injectHomepageStyles(chrome.extension.getURL('css/homepage.css'));
+  });
 }
 
 const arrows = () => {
@@ -55,3 +67,4 @@ const fix_homepage = () => {
 }
 
 window.addEventListener("DOMContentLoaded", fix_homepage);
+injectHomepage();

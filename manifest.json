@@ -71,7 +71,6 @@
                 "https://itsm.northwestern.edu/MRcgi/MRentrancePage.pl*",
                 "https://itsm-fp.northwestern.edu/MRcgi/MRentrancePage.pl*"
             ],
-            "css": ["css/login.css", "css/login_dark.css"],
             "js": ["js/inject_login_css.js"],
             "run_at": "document_start"
         },
@@ -80,8 +79,7 @@
                 "https://itsm.northwestern.edu/MRcgi/MRlogin.pl*",
                 "https://itsm-fp.northwestern.edu/MRcgi/MRlogin.pl*"
             ],
-            "css": ["css/interstitial.css", "css/loading.css"],
-            "js": ["js/loading.js"],
+            "js": ["js/loading.js", "js/inject_interstitial_css.js"],
             "run_at": "document_start"
         },
         {
@@ -89,8 +87,7 @@
                 "https://itsm.northwestern.edu/MRcgi/MRsearch_page.pl*",
                 "https://itsm-fp.northwestern.edu/MRcgi/MRsearch_page.pl*"
             ],
-            "js": ["js/homepage.js"],
-            "css": ["css/homepage.css"],
+            "js": ["js/homepage.js", "js/inject_search_css.js"],
             "run_at": "document_start"
         },
         {
@@ -123,9 +120,6 @@
                 "js/popup.js",
                 "js/inject_tabs.js",
                 "js/homepage.js"
-            ],
-            "css": [
-                "css/homepage.css"
             ],
             "run_at": "document_start"
         },
