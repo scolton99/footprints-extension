@@ -11,6 +11,9 @@ function injectInterstitial() {
   }, items => {
     if (!items.dark)
       return;
+
+    if (document.forms.LOGIN)
+      return;
     
     injectInterstitialStyles(chrome.extension.getURL('css/interstitial.css'));
     injectInterstitialStyles(chrome.extension.getURL('css/loading.css'));
