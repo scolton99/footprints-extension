@@ -1,0 +1,15 @@
+body > div#ContentWrapper {
+  background-color: #202124;
+}
+
+body > #ContentWrapper > div > * {
+  color: #C17FFF;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+}
+
+body > #ContentWrapper > div {
+  padding-top: 30px;
+}

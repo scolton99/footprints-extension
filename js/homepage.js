@@ -56,6 +56,9 @@ const fix_homepage = () => {
   const logo = document.querySelector("div#Logo > img");
   logo.src = chrome.extension.getURL('img/ITSM-Brand-Dark.png');
 
+  if (!document.getElementById("splitbutton1-button"))
+    return window.setTimeout(fix_homepage, 10);
+
   document.getElementById("splitbutton1-button").style.backgroundImage = "url(\"" + chrome.extension.getURL('img/split-button-arrow-dark.png') + "\")";
 
   const style = document.createElement("style");

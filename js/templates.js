@@ -26,6 +26,9 @@ const mk_template_search = () => {
   search_box.setAttribute("placeholder", "Search for a template...");
   
   const templates_dom = document.querySelector("select[name='QUICKCREATE']");
+
+  if (!templates_dom) return;
+
   const parent = templates_dom.parentElement;
 
   parent.insertBefore(search_box, templates_dom);

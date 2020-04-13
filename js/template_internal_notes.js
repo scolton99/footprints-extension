@@ -31,5 +31,7 @@ const load_internal_notes = () => {
 }
 
 const qit_button = document.querySelector("select[name='QUICKCREATE'] + table > tbody > tr > td > a[title='Submit']");
-qit_button.addEventListener("click", save_internal_notes);
-load_internal_notes();
+if (qit_button) {
+  qit_button.addEventListener("click", save_internal_notes);
+  load_internal_notes();
+}

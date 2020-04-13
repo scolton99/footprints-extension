@@ -657,3 +657,7 @@ div#tabMenu div.tab {
 div#tabMenu div.tab:hover {
   background-color: #555;
 }
+
+img[src='/MRimg/refresh_header.png'], img[src='/MRimg/gettingstarted.png'] {
+  display: none;
+}
