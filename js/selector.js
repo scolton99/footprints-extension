@@ -19,16 +19,11 @@ if (dropdown) {
         }, ({ showLocationWarning }) => {
             if (showLocationWarning) {
                 if ((location === "unknown" || location === null)) {
-                    const warning = document.createElement("span");
-                    warning.textContent = "FP Extension location not selected!";
-                    warning.style.marginTop = "10px";
-                    warning.style.fontSize = "1.1em";
-                    warning.style.fontWeight = "bold";
-                    warning.style.color = "red";
-                    warning.style.display = "block";
-        
-                    const ref = document.querySelector("fieldset > div.cell[title='Location']");
-                    ref.appendChild(warning);
+                    const walk_in_location = document.getElementById("Walk__uin__bLocation");
+                    walk_in_location.style.backgroundColor = "#d66";
+                    walk_in_location.addEventListener("change", (() => {
+                        document.getElementById("Walk__uin__bLocation").style.backgroundColor = null;
+                    }).bind(walk_in_location));
         
                     return;
                 }

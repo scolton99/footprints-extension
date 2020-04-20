@@ -16,7 +16,8 @@ function injectHomepage() {
   }, items => {
     if (!items.dark)
       return;
-    
+      
+    window.addEventListener("DOMContentLoaded", fix_homepage);
     injectHomepageStyles(chrome.extension.getURL('css/homepage.css'));
   });
 }
@@ -69,5 +70,4 @@ const fix_homepage = () => {
   arrows();
 }
 
-window.addEventListener("DOMContentLoaded", fix_homepage);
 injectHomepage();
