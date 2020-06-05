@@ -29,19 +29,25 @@ chrome.runtime.onMessage.addListener(async (request, _sender, sendResponse) => {
         const {ip: IP} = await fetch('https://api.ipify.org/?format=json').then(response => response.json());
         sendResponse(IP);
 
-        let location = "unknown";
+        chrome.storage.local.get({
+            location: null
+        }, values => {
+            if (values.location === null || values.location === "unknown") {
+                let location = "unknown";
 
-        if (IP.startsWith("129.105.22")) {
-            location = "library";
-        } else if (IP.startsWith("129.105.188")) {
-            location = "sherman";
-        }
+                if (IP.startsWith("129.105.22")) {
+                    location = "library";
+                } else if (IP.startsWith("129.105.188")) {
+                    location = "sherman";
+                }
 
-        chrome.storage.local.set({
-            location: location
+                chrome.storage.local.set({
+                    location: location
+                });
+
+                return true;
+            }
         });
-
-        return true;
     }
 });
 

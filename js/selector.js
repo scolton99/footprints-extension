@@ -14,12 +14,14 @@ if (dropdown) {
     chrome.storage.local.get({
         location: "unknown",
     }, ({ location }) => {
+        const walk_in_location = document.getElementById("Walk__uin__bLocation");
+
         chrome.storage.sync.get({
             showLocationWarning: true
         }, ({ showLocationWarning }) => {
             if (showLocationWarning) {
-                if ((location === "unknown" || location === null)) {
-                    const walk_in_location = document.getElementById("Walk__uin__bLocation");
+
+                if ((location === "unknown" || location === null) && walk_in_location.value === "" && walk_in_location.tagName === "SELECT") {
                     walk_in_location.style.backgroundColor = "#d66";
                     walk_in_location.addEventListener("change", (() => {
                         document.getElementById("Walk__uin__bLocation").style.backgroundColor = null;
@@ -27,11 +29,13 @@ if (dropdown) {
         
                     return;
                 }
-        
-                fpLocation = locations[location];
-                dropdown.value = fpLocation;
             }  
         });
+        
+        if (walk_in_location.tagName === "SELECT" && location !== "unknown" && location !== null) {
+            fpLocation = locations[location];
+            dropdown.value = fpLocation;
+        }
     });
 }
 
