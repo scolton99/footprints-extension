@@ -1,3 +1,12 @@
+chrome.storage.sync.get({
+  enableCards: true
+}, function(items) {
+  if (!items.enableCards){
+    return;
+  }
+    inject();
+});
+
 function inject(){
     let link = document.createElement("link");
 
@@ -37,5 +46,3 @@ function inject(){
 
     document.head.appendChild(popper);
 }
-
-inject();

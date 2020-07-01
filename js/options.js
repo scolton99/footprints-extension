@@ -1,17 +1,17 @@
 function save_options() {
-  var prettyFootprints = document.getElementById('prettyFootprints').checked;
-  var popupMessage = document.getElementById('popupMessage').checked;
-  // var autoRefresh = document.getElementById('autoRefresh').checked;
-  var showDownloadCategories = document.getElementById('showDownloadCategories').checked;
-  var tabs = document.getElementById('tabs').checked;
-  var showLocationWarning = document.getElementById('locationWarning').checked;
-  var fixconduits = document.getElementById('fixconduits').checked;
-  var dark = document.getElementById('dark').checked;
+  let prettyFootprints = document.getElementById('prettyFootprints').checked;
+  let popupMessage = document.getElementById('popupMessage').checked;
+  let enableCards = document.getElementById('enableCards').checked;
+  let showDownloadCategories = document.getElementById('showDownloadCategories').checked;
+  let tabs = document.getElementById('tabs').checked;
+  let showLocationWarning = document.getElementById('locationWarning').checked;
+  let fixconduits = document.getElementById('fixconduits').checked;
+  let dark = document.getElementById('dark').checked;
 
   chrome.storage.sync.set({
     prettyFootprints: prettyFootprints,
+    enableCards: enableCards,
     popupMessage: popupMessage,
-    // autoRefresh: autoRefresh,
     showDownloadCategories: showDownloadCategories,
     tabs: tabs,
     showLocationWarning: showLocationWarning,
@@ -33,8 +33,8 @@ function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
     prettyFootprints: true,
+    enableCards: true,
     popupMessage: false,
-    // autoRefresh: false,
     showDownloadCategories: false,
     tabs: true,
     showLocationWarning: true,
@@ -42,8 +42,8 @@ function restore_options() {
     dark: false
   }, function(items) {
     document.getElementById('prettyFootprints').checked = items.prettyFootprints;
+    document.getElementById('enableCards').checked = items.enableCards;
     document.getElementById('popupMessage').checked = items.popupMessage;
-    // document.getElementById('autoRefresh').checked = items.autoRefresh;
     document.getElementById('showDownloadCategories').checked = items.showDownloadCategories;
     document.getElementById('tabs').checked = items.tabs;
     document.getElementById('locationWarning').checked = items.showLocationWarning;
