@@ -2,7 +2,6 @@ clean_up();
 let tickets = document.getElementsByClassName("x-grid3-row");
 transform();
 
-//Remove pointless? hidden divs
 async function clean_up(){
     //Disable FP auto refresh so we can inject our own
     quickEditUpdateInProgress = true;
@@ -24,7 +23,6 @@ async function clean_up(){
     document.body.removeAttribute("class");
     document.body.removeAttribute("id");
 
-    //document.getElementById("ContentWrapper").style.display = "none";
 }
 
 function transform(){
@@ -163,7 +161,13 @@ function get_title(ticket){
 }
 
 function get_description(ticket){
-    return ticket.rows[0].cells[5].firstChild.childNodes[1].textContent;
+    let desc = ticket.rows[0].cells[5].firstChild.childNodes[1].textContent;
+
+    if(desc.length == 1){
+      desc = 'Enable "Collapsed Description in Title" within your prefs to show previews!';
+    }
+
+    return desc;
 }
 
 function get_status(ticket){
