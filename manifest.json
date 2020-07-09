@@ -16,7 +16,8 @@
         "js/categories.js",
         "js/assignees.js",
         "js/download_categories.js",
-        "js/tabs.js"
+        "js/tabs.js",
+        "js/cards.js"
     ],
     "options_ui": {
         "page": "options.html",
@@ -166,7 +167,10 @@
             "js/inject_cards.js",
             "js/inject_bootstrap.js"
           ],
-          "run_at": "document_end"
+          "css": [
+            "css/shim.css"
+          ],
+          "run_at": "document_idle"
         }
       ],
       "permissions": [
