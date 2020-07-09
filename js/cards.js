@@ -153,15 +153,15 @@ async function get_full_desc(button, ticket_num){
 }
 
 function get_ticket_num(ticket){
-    return ticket.rows[0].cells[4].firstChild.firstChild.textContent;
+    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_mr")[0].firstElementChild.firstElementChild.textContent;
 }
 
 function get_title(ticket){
-    return ticket.rows[0].cells[5].firstChild.firstChild.textContent;
+    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_title")[0].firstElementChild.firstElementChild.textContent;
 }
 
 function get_description(ticket){
-    let desc = ticket.rows[0].cells[5].firstChild.childNodes[1].textContent;
+    let desc = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_title")[0].firstChild.childNodes[1].textContent;
 
     if(desc.length == 1){
       desc = 'Enable "Collapsed Description in Title" within your prefs to show previews!';
@@ -171,19 +171,19 @@ function get_description(ticket){
 }
 
 function get_status(ticket){
-    return ticket.rows[0].cells[6].firstChild.textContent;
+    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_status")[0].firstChild.textContent;
 }
 
 function get_last_edit(ticket){
-    return ticket.rows[0].cells[7].firstChild.textContent;
+    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_datetimeago")[0].firstChild.textContent;
 }
 
 function get_priority(ticket){
-    return ticket.rows[0].cells[10].firstChild.textContent;
+    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_priority")[0].firstChild.textContent;
 }
 
 function dept_support(ticket){
-    let support = ticket.rows[0].cells[9].firstChild.textContent;
+    let support = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_Departmental__bSupport")[0].firstChild.textContent;
 
     if(support === '-'){
         support = "none";
