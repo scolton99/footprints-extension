@@ -167,11 +167,24 @@ function get_description(ticket){
       desc = 'Enable "Collapsed Description in Title" within your prefs to show previews!';
     }
 
+    if(typeof desc === undefined){
+      desc = 'Enable "Collapsed Description in Title" within your prefs to show previews!';
+    }
+
     return desc;
 }
 
 function get_status(ticket){
-    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_status")[0].firstChild.textContent;
+  let status;
+
+  try{
+    status = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_status")[0].firstChild.textContent;
+
+  }
+  catch{
+    status = "DISABLED";
+  }
+    return status;
 }
 
 function get_last_edit(ticket){
@@ -179,15 +192,31 @@ function get_last_edit(ticket){
 }
 
 function get_priority(ticket){
-    return ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_priority")[0].firstChild.textContent;
-}
+  let priority;
+
+  try {
+    priority = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_priority")[0].firstChild.textContent;;
+  }
+  catch{
+    priority = "DISABLED";
+  }
+
+  return priority;
+  }
 
 function dept_support(ticket){
-    let support = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_Departmental__bSupport")[0].firstChild.textContent;
+  let support;
+
+  try{
+    support = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_Departmental__bSupport")[0].firstChild.textContent;
 
     if(support === '-'){
         support = "none";
     }
+  }
+  catch{
+    support = "DISABLED";
+  }
 
     return support;
 }
@@ -198,7 +227,8 @@ function badge_type(ticket){
         MEDIUM: 'badge-warning',
         HIGH: 'badge-danger',
         CRITICAL: 'badge-dark',
-        EXTENDED: 'badge-primary'
+        EXTENDED: 'badge-primary',
+        DISABLED: 'badge-light'
     }
 
     let priority = get_priority(ticket);
@@ -218,6 +248,9 @@ function badge_type(ticket){
             break;
         case "EXTENDED":
             badge = badges.EXTENDED;
+            break;
+        case "DISABLED":
+            badge = badges.DISABLED;
             break;
     }
 
