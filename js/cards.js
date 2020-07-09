@@ -24,6 +24,7 @@ async function clean_up(){
     document.body.removeAttribute("class");
     document.body.removeAttribute("id");
 
+    //document.getElementById("ContentWrapper").style.display = "none";
 }
 
 function transform(){
@@ -69,6 +70,14 @@ function highlight(card){
 function lowlight(card){
     card.classList.remove("shadow");
     card.classList.add("shadow-sm");
+}
+
+function signout(){
+    location.href="/MRcgi/MRlogout.pl?USER=" + document.quickSearch.USER.value + "&MRP="+ document.quickSearch.MRP.value + "&PROJECTID=" + document.quickSearch.PROJECTID.value + "&LASTID=" + document.quickSearch.LASTID.value;
+}
+
+function prefs(){
+    location.href="/MRcgi/MRpreferences_page.pl?USER=" + document.quickSearch.USER.value + "&MRP="+ document.quickSearch.MRP.value + "&PROJECTID=" + document.quickSearch.PROJECTID.value + "&LASTID=" + document.quickSearch.LASTID.value;
 }
 
 function init_navbar(){
@@ -354,7 +363,7 @@ function create_modal(){
 function create_navbar(){
     let navbar_shim = document.createElement('div');
 
-    navbar_shim.innerHTML = '<div class="fixed-top" id="navwhole"> <div class="collapse" id="hidden_opts"> <div class="bg-light p-4"> <h4 id="username">Welcome, $User!</h5> <span class="text-muted">Toggleable via the navbar brand.</span> </div> </div> <nav class="border-top border-bottom border-secondary navbar navbar-expand-md navbar-light bg-light" id="justbar"> <a class="navbar-brand" href="#"><strong>ITSM</strong></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navnav"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navnav"> <div class="navbar-nav"> <a class="nav-item nav-link" id="go_home">Home</a> <a class="nav-item nav-link active" onclick="goToCreate(1);">New Issue</a> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="reports" role="button" data-toggle="dropdown">Reports</a> <div class="dropdown-menu" id="reports_drop"> </div> </li> </div> <div class="col-5" id="searches_div"> </div> <button class="btn btn-sm btn-outline-secondary" type="button" onclick="processDisplayDropdown(true)"> Refresh </button> <span class=" ml-1 badge badge-secondary" data-toggle="tooltip" data-placement="bottom" title="Tickets Loaded / Total" id="count_badge">$count</span> </div> <form class="form-inline my-2 mr-2"> <div class="input-group"> <input type="text" class="form-control" id="search_input" placeholder="Search..."> <div class="input-group-append"> <button class="btn btn-outline-secondary" type="button" onclick="goto_ticket()">Ticket</button> <button class="btn btn-outline-secondary" type="button" onclick="do_search()" >Query</button> <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-toggle="dropdown"></button> <div class="dropdown-menu" id="query_drop"> <a class="dropdown-item" onclick="update_search(this)">Title</a> <a class="dropdown-item" onclick="update_search(this)">Keyword</a> </div> </div> </div> </form> <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#hidden_opts"> 🛠 </button> </nav> </div>';
+    navbar_shim.innerHTML = '<div class="fixed-top" id="navwhole"> <div class="collapse" id="hidden_opts"> <div class="bg-light p-4"> <h4 id="username" class="mb-3">Welcome, $User!</h4> <button type="button" class="btn btn-danger" onclick="signout()">Sign Out</button> <button type="button" class="btn btn-outline-secondary" onclick="prefs()">Preferences</button> </div> </div> <nav class="border-top border-bottom border-secondary navbar navbar-expand-md navbar-light bg-light" id="justbar"> <a class="navbar-brand" href="#"><strong>ITSM</strong></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navnav"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navnav"> <div class="navbar-nav"> <a class="nav-item nav-link" id="go_home">Home</a> <a class="nav-item nav-link active" onclick="goToCreate(1);">New Issue</a> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="reports" role="button" data-toggle="dropdown">Reports</a> <div class="dropdown-menu" id="reports_drop"> </div> </li> </div> <div class="col-5" id="searches_div"> </div> <button class="btn btn-sm btn-outline-secondary" type="button" onclick="processDisplayDropdown(true)"> Refresh </button> <span class=" ml-1 badge badge-secondary" data-toggle="tooltip" data-placement="bottom" title="Tickets Loaded / Total" id="count_badge">$count</span> </div> <form class="form-inline my-2 mr-2"> <div class="input-group"> <input type="text" class="form-control" id="search_input" placeholder="Search..."> <div class="input-group-append"> <button class="btn btn-outline-secondary" type="button" onclick="goto_ticket()">Ticket</button> <button class="btn btn-outline-secondary" type="button" onclick="do_search()" >Query</button> <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-toggle="dropdown"></button> <div class="dropdown-menu" id="query_drop"> <a class="dropdown-item" onclick="update_search(this)">Title</a> <a class="dropdown-item" onclick="update_search(this)">Keyword</a> </div> </div> </div> </form> <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#hidden_opts"> 🛠 </button> </nav> </div>';
 
     let navbar = navbar_shim.firstChild;
 

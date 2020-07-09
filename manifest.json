@@ -14,8 +14,6 @@
         "css/*",
         "img/*",
         "js/categories.js",
-        "js/auto_refresh.js",
-        "js/mock_timeout.js",
         "js/assignees.js",
         "js/download_categories.js",
         "js/tabs.js"
@@ -158,15 +156,29 @@
                 "js/kbadmin_preview.js"
             ],
             "run_at": "document_start"
+        },
+        {
+          "matches": [
+            "https://itsm.northwestern.edu/MRcgi/MRhomepage.pl*",
+            "https://itsm-fp.northwestern.edu/MRcgi/MRhomepage.pl*"
+          ],
+          "js": [
+            "js/inject_cards.js",
+            "js/inject_bootstrap.js"
+          ],
+          "run_at": "document_end"
         }
-    ],
-    "permissions": [
+      ],
+      "permissions": [
         "storage",
-        "contextMenus"
+        "contextMenus",
+        "clipboardWrite",
+        "activeTab"
+      ],
     ],
     "omnibox": { "keyword": "fp" },
     "background": {
         "scripts": ["js/background.js"],
         "persistent": false
     }
-}
+  }
