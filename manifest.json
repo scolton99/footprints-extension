@@ -175,7 +175,6 @@
         "clipboardWrite",
         "activeTab"
       ],
-    ],
     "omnibox": { "keyword": "fp" },
     "background": {
         "scripts": ["js/background.js"],
