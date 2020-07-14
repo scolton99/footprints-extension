@@ -1,6 +1,22 @@
 # Footprints Extension
 A Chrome extension written for Northwestern IT to extend the functionality of the Footprints IT Service Manager.
 
+## Aesthetic Changes
+
+### Card Layout
+Creates a more modern, card based layout out of the tickets homepage. Issues should be much more readable and pleasant to look at. Each
+separate ticket is now a card. The UI functions much the same as the original page, albeit only displaying critical information on first glance.
+The ticket number in the bottom left is colored based on issue status, and it can be clicked to copy the ticket number.
+
+![Cards](../media/Cards.png?raw=true)
+
+### New Favicon
+Since TSC Tier 1 is required to use this extension, we tried to give as many hints as possible that the extension is installed
+so that it is more evident if ever it is *not* installed. Accordingly, a new favicon was designed for Footprints to match Northwestern's
+purple theme. When the extension is installed, the favicon in the browser looks like this:
+
+![New Favicon](https://i.imgur.com/Yd4JlvG.jpg)
+
 ## Features
 This extension provides a number of features that improve the experience of using Footprints.
 
@@ -127,22 +143,6 @@ Highlight a ticket number in text anywhere in the browser, right click to show t
 Go to Chrome's Omnibox, clear the contents, and then type "FP [ticket number]" (e.g. "FP 839901") and press "Return" or "Enter".
 
 ![Omnibox Jump](https://imgur.com/e6kq1X5.jpg)
-
-## Aesthetic Changes
-
-### New Favicon
-Since TSC Tier 1 is required to use this extension, we tried to give as many hints as possible that the extension is installed
-so that it is more evident if ever it is *not* installed. Accordingly, a new favicon was designed for Footprints to match Northwestern's
-purple theme. When the extension is installed, the favicon in the browser looks like this:
-
-![New Favicon](https://i.imgur.com/Yd4JlvG.jpg)
-
-### Card Layout
-Creates a more modern, card based layout out of the tickets homepage. Issues should be much more readable and pleasant to look at. Each
-separate ticket is now a card. The UI functions much the same as the original page, albeit only displaying critical information on first glance.
-The ticket number in the bottom left is colored based on issue status, and it can be clicked to copy the ticket number.
-
-![Cards](../media/Cards.png?raw=true)
 
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
