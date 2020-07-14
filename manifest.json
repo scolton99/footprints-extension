@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Footprints Extension",
-    "version": "4.3.1",
-    "author": "Tushar Chandra, Spencer Colton",
+    "version": "5.0.0",
+    "author": "Tushar Chandra, Spencer Colton, Mateusz Ryczek",
     "description": "Adds improvements to the BMC Footprints IT Service Manager.",
     "icons": {
         "16": "img/favicon-16x16.png",
