@@ -492,6 +492,12 @@ function do_search(){
 
   if (query.match(/^\d{6,7}$/)) {
     goToDetails(query, 1);
+  }else if (query === ""){
+    let uh_oh = confirm('You are about to ask FootPrints to return the ENTIRE ticket database. Proceed?');
+    if(uh_oh){
+      document.quickSearch.SEARCHS.value = query;
+      document.quickSearch.submit();
+    }
   }else{
     document.quickSearch.SEARCHS.value = query;
     document.quickSearch.submit();
