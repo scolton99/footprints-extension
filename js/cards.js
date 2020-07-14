@@ -143,6 +143,8 @@ function init_navbar(){
 
     let username = document.getElementsByClassName("breadcrumbdarkblue")[0].textContent.split(' ')[1];
     document.getElementById("username").textContent = "Welcome, " + username + "!";
+
+    document.getElementById("search_input").onkeypress = function(e) { if(e.keyCode === 13) { do_search(); return false;}}
 }
 
 async function get_full_desc(button, ticket_num){
@@ -329,7 +331,6 @@ function create_card(){
     let curr_ticket = tickets[0].firstChild;
     let ticket_num = get_ticket_num(curr_ticket);
 
-
     let card = document.createElement('div');
     card.classList = "card shadow-sm";
     if(get_priority(curr_ticket) === "I-CRITICAL"){
@@ -487,9 +488,14 @@ function goto_ticket(){
 }
 
 function do_search(){
-    document.quickSearch.SEARCHS.value = document.getElementById("search_input").value;
+  let query = document.getElementById("search_input").value;
 
+  if (query.match(/^\d{6,7}$/)) {
+    goToDetails(query, 1);
+  }else{
+    document.quickSearch.SEARCHS.value = query;
     document.quickSearch.submit();
+  }
 }
 
 function update_search(option){
