@@ -1,4 +1,5 @@
 clean_up();
+handle_errors();
 let tickets = document.getElementsByClassName("x-grid3-row");
 transform();
 
@@ -25,8 +26,29 @@ async function clean_up(){
 
 }
 
+function handle_errors(){
+  let maybe_error;
+
+  try{
+    maybe_error = document.getElementsByClassName("pageHeader")[0].textContent;
+
+    switch (maybe_error) {
+      case "Login Error":
+        create_relog();
+        break;
+
+      case "FootPrints Service Core Error":
+        let msg = document.getElementsByClassName("dialogMainContent")[0].innerText;
+        create_error(msg);
+        break;
+    }
+  }
+  catch{
+    return;
+  }
+}
+
 function transform(){
-    document.getElementById("grid-ct").style.display = "none";
 
     if(document.getElementsByClassName("x-grid-empty").length === 1){
         no_tickets();
@@ -278,6 +300,14 @@ function copy_ticket_num(badge) {
 async function restore_badge(badge, ticket_num) {
     badge.textContent = ticket_num;
     badge.removeAttribute("onmouseleave");
+}
+
+function create_relog(){
+  document.getElementById("ContentWrapper").setAttribute('style', 'display:block !important; top: 0px !important; left: 0px !important; margin: 0 auto; position: initial !important');
+}
+
+function create_error(msg){
+  document.getElementById("ContentWrapper").setAttribute('style', 'display:block !important; top: 0px !important; left: 0px !important; margin: 0 auto; position: initial !important');
 }
 
 function create_banner(text, type){
