@@ -11,29 +11,26 @@ whether the user is at our 1800 Sherman location or our University Library locat
 accordingly on all tickets created or edited during that session.
 
 In the event that the location cannot be accurately determined (for example, if the user is on the wireless network), a warning
-is shown that a location has not been automatically selected, and the location can be set manually through the menu under the 
+is shown that a location has not been automatically selected, and the location can be set manually through the menu under the
 extension's icon.
 
 ![Footprints Location Warning](https://imgur.com/PKQl2JJ.jpg)
 
 ![Footprints Extension Menu](https://imgur.com/ivkXhRO.jpg)
 
-**For non-Tier 1 users of the extension**, we recommend that you turn off the location features in the 
-[extension settings](chrome://extensions/?options=bhcajiiignledggebpaalkpcccbjohhc). This will disable the warning and it will 
+**For non-Tier 1 users of the extension**, we recommend that you turn off the location features in the
+[extension settings](chrome://extensions/?options=bhcajiiignledggebpaalkpcccbjohhc). This will disable the warning and it will
 stop the extension from automatically setting the Location field.
 
-### Aesthetic Changes
-The extension also applies a more aesthetically pleasing theme to the ticket page. This can be disabled in the [extension settings](chrome://extensions/?options=bhcajiiignledggebpaalkpcccbjohhc).
-
 ### Conweb Interaction (TSC Tier 1 Only)
-[Conweb](https://kb.northwestern.edu/internal/conweb) will display a warning by default that this extension is not installed. 
+[Conweb](https://kb.northwestern.edu/internal/conweb) will display a warning by default that this extension is not installed.
 Once this extension is installed and Conweb is refreshed, the message will be removed.
 
 ![Conweb](https://imgur.com/jHcptxW.jpg)
 
 ### Category Search
-Since Footprints has [nearly 1000](https://kb.northwestern.edu/internal/87181) distinct categories, it can be difficult to 
-remember where all of them are or even to know that some of them exist. This extension provides a method of searching for 
+Since Footprints has [nearly 1000](https://kb.northwestern.edu/internal/87181) distinct categories, it can be difficult to
+remember where all of them are or even to know that some of them exist. This extension provides a method of searching for
 categories and displaying the closest matching ones.
 
 ![Category Search](https://imgur.com/WJ2kbTn.jpg)
@@ -44,7 +41,7 @@ one of them.
 ![Category Search Multiple](https://imgur.com/PFkNn2r.jpg)
 
 ### Assignee Search
-Similarly to categories, since Northwestern has somewhere in the area of 150 assignment groups (in this workspace alone), 
+Similarly to categories, since Northwestern has somewhere in the area of 150 assignment groups (in this workspace alone),
 this extension provides a search box for assignees. The search enables you to search for any of these fields:
 * An individual's NetID
 * An individual's name
@@ -60,7 +57,7 @@ or "barnick" (part of a member's name).
 ![Assignee Search by Member NetID](https://imgur.com/wavaW6E.jpg)
 
 ### Template Search
-To make finding a Quick Issue Template easier, the extension adds a search bar to the left of the template menu. The template list will be 
+To make finding a Quick Issue Template easier, the extension adds a search bar to the left of the template menu. The template list will be
 filtered to show only templates whose names contain the entered text (case-insensitive).
 
 ![Template Search](https://imgur.com/XfrBSV2.jpg)
@@ -85,13 +82,6 @@ This extension allows for image attachments (`.png`, `.gif`, `.bmp`, and `.jpg`)
 
  ![Text Attachment Preview](https://imgur.com/0QcwTuM.jpg)
 
-### New Favicon
-Since TSC Tier 1 is required to use this extension, we tried to give as many hints as possible that the extension is installed
-so that it is more evident if ever it is *not* installed. Accordingly, a new favicon was designed for Footprints to match Northwestern's
-purple theme. When the extension is installed, the favicon in the browser looks like this:
-
-![New Favicon](https://i.imgur.com/Yd4JlvG.jpg)
-
 ### Fixify Descriptions
 The Footprints WYSIWYG editor has plenty of glitches in its behavior. Often, a description that looked good while typing appears different
 after being submitted and results in tickets that have strange discrepancies in formatting, like this one:
@@ -109,7 +99,7 @@ Of note, **bolded**, *italicized*, or indented text will remain bolded, italiciz
 ![Fixify](https://imgur.com/xlVx6DD.jpg)
 
 Even when it appears that the formatting of a new ticket description is okay, we recommend using the Fixify button to ensure that all redundant
-and unnecessary formatting is cleared from the text before submitting. Often, the offending formatting tags are already in the text but don't 
+and unnecessary formatting is cleared from the text before submitting. Often, the offending formatting tags are already in the text but don't
 cause an issue until the email has already been sent to the user. Fixify prevents that.
 
 ### Jump to Ticket Shortcuts
@@ -138,6 +128,21 @@ Go to Chrome's Omnibox, clear the contents, and then type "FP [ticket number]" (
 
 ![Omnibox Jump](https://imgur.com/e6kq1X5.jpg)
 
+## Aesthetic Changes
+
+### New Favicon
+Since TSC Tier 1 is required to use this extension, we tried to give as many hints as possible that the extension is installed
+so that it is more evident if ever it is *not* installed. Accordingly, a new favicon was designed for Footprints to match Northwestern's
+purple theme. When the extension is installed, the favicon in the browser looks like this:
+
+![New Favicon](https://i.imgur.com/Yd4JlvG.jpg)
+
+### Card Layout
+Creates a more modern, card based layout out of the tickets homepage. Issues should be much more readable and pleasant to look at. Each
+separate ticket is now a card. The UI functions much the same as the original page, albeit only displaying critical information on first glance.
+The ticket number in the bottom left is colored based on issue status, and it can be clicked to copy the ticket number.
+
+![Cards](../media/Cards.png?raw=true)
 
 ## Installation
 The extension can be installed in Google Chrome on the Chrome Web Store
