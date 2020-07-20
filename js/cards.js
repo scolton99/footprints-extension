@@ -123,8 +123,8 @@ function init_navbar(){
 
     document.getElementById("searches_div").prepend(searches);
 
-    let loaded = document.getElementById("TableActions").firstElementChild.children[0].textContent.split(' ')[2];
-    let total = document.getElementById("TableActions").firstElementChild.children[1].textContent.split(' ')[2];
+    let loaded = document.getElementsByClassName("pagination")[0].firstElementChild.textContent;
+    let total = document.getElementsByClassName("pagination")[0].children[1].textContent.split(' ')[2];
 
     document.getElementById("count_badge").textContent = loaded + ' / ' + total;
 
