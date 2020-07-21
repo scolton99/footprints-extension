@@ -101,7 +101,7 @@ function prefs(){
 }
 
 function init_navbar(){
-    document.getElementById("go_home").href = document.getElementById("tb_home").href;
+    document.getElementById("go_home").href = '/MRcgi/MRhomepage.pl?USER="' + document.quickSearch.USER.value + "&MRP="+ document.quickSearch.MRP.value + "&PROJECTID=" + document.quickSearch.PROJECTID.value + "&LASTID=" + document.quickSearch.LASTID.value;
 
     let reports = document.getElementById("tb_kb_report").parentElement.parentElement.children;
     let report_menu = document.getElementById("reports_drop");
