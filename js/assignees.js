@@ -83,3 +83,19 @@ if (pmember) {
             box.appendChild(element);
     }    
 }
+
+function pickup_ticket(remove_others){
+    const user_netid = document.DETAILS_FORM.USER.value;
+    const user_num = assigneePicker.teams[173].memberIds.indexOf(user_netid);
+    const user_name = assigneePicker.teams[173].memberRealNames[user_num];
+
+    let assignee = document.createElement("option");
+    assignee.value = user_netid;
+    assignee.textContent = user_name;
+
+    if(remove_others){
+        assigneePicker.box2.innerHTML = '';
+    }
+
+    assigneePicker.box2.appendChild(assignee);
+}
