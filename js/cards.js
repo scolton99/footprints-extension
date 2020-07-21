@@ -5,7 +5,7 @@ transform();
 
 async function clean_up(){
     //Disable FP auto refresh so we can inject our own
-    //quickEditUpdateInProgress = true;
+    quickEditUpdateInProgress = true;
 
     let trash = document.body.children;
 
@@ -44,7 +44,6 @@ function handle_errors(){
     }
   }
   catch{
-    return;
   }
 }
 
@@ -187,7 +186,7 @@ function get_title(ticket){
 function get_description(ticket){
     let desc = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_title")[0].firstChild.childNodes[1].textContent;
 
-    if(desc.length == 1){
+    if(desc.length === 1){
       desc = 'Enable "Collapsed Description in Title" within your prefs to show previews!';
     }
 
@@ -219,7 +218,7 @@ function get_priority(ticket){
   let priority;
 
   try {
-    priority = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_priority")[0].firstChild.textContent;;
+    priority = ticket.rows[0].getElementsByClassName("x-grid3-td-hpColHeading_priority")[0].firstChild.textContent;
   }
   catch{
     priority = "DISABLED";
