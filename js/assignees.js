@@ -99,3 +99,23 @@ function pickup_ticket(remove_others){
 
     assigneePicker.box2.appendChild(assignee);
 }
+
+function assign_my_team(){
+    const user_netid = document.DETAILS_FORM.USER.value;
+    const teams = assigneePicker.teams;
+
+    let user_team;
+
+    for (let team of teams) {
+        if (team.memberIds.indexOf(user_netid) > 0){
+            user_team = team.name;
+            break;
+        }
+    }
+
+    let main = document.createElement("option");
+    main.value = user_team;
+    main.textContent = user_team.replace(/__b/g, " ").replace(/__u/g, "-");
+
+    assigneePicker.box2.appendChild(main);
+}
