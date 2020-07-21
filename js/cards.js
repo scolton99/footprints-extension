@@ -5,7 +5,7 @@ transform();
 
 async function clean_up(){
     //Disable FP auto refresh so we can inject our own
-    quickEditUpdateInProgress = true;
+    //quickEditUpdateInProgress = true;
 
     let trash = document.body.children;
 
