@@ -85,7 +85,7 @@ if (pmember) {
 }
 
 function pickup_ticket(remove_others){
-    const user_netid = document.DETAILS_FORM.USER.value;
+    const user_netid = document.regform.USER.value;
     const user_num = assigneePicker.teams[173].memberIds.indexOf(user_netid);
     const user_name = assigneePicker.teams[173].memberRealNames[user_num];
 
@@ -101,7 +101,7 @@ function pickup_ticket(remove_others){
 }
 
 function assign_my_team(){
-    const user_netid = document.DETAILS_FORM.USER.value;
+    const user_netid = document.regform.USER.value;
     const teams = assigneePicker.teams;
 
     let user_team;
