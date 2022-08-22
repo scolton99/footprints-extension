@@ -12,10 +12,10 @@ function injectLogin() {
     if (!items.dark)
       return;
     
-    injectLoginStyles(chrome.extension.getURL('css/login.css'));
-    injectLoginStyles(chrome.extension.getURL('css/login_dark.css'));
+    injectLoginStyles(chrome.runtime.getURL('css/login.css'));
+    injectLoginStyles(chrome.runtime.getURL('css/login_dark.css'));
   
-    document.querySelector("div#logoTopLogin > img").src = chrome.extension.getURL('img/ITSM-Brand-Dark.png');    
+    document.querySelector("div#logoTopLogin > img").src = chrome.runtime.getURL('img/ITSM-Brand-Dark.png');    
   });
 }
 

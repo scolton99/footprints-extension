@@ -12,7 +12,7 @@ function injectDirectEdit() {
     if (!items.dark)
       return;
     
-    injectDirectEditStyles(chrome.extension.getURL('css/direct_edit.css'));
+    injectDirectEditStyles(chrome.runtime.getURL('css/direct_edit.css'));
   });
 }
 

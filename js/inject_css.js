@@ -22,11 +22,11 @@ function injectStyles(url) {
 }
 
 function injectAll() {
-  injectStyles(chrome.extension.getURL('vendor/fontawesome/css/all.min.css'));
-  injectStyles(chrome.extension.getURL('css/fp-material.css'));
-  injectStyles(chrome.extension.getURL('css/fp-material-dark.css'));
-  injectStyles(chrome.extension.getURL('css/fixify.css'));
-  injectStyles(chrome.extension.getURL('css/attachments.css'));
+  injectStyles(chrome.runtime.getURL('vendor/fontawesome/css/all.min.css'));
+  injectStyles(chrome.runtime.getURL('css/fp-material.css'));
+  injectStyles(chrome.runtime.getURL('css/fp-material-dark.css'));
+  injectStyles(chrome.runtime.getURL('css/fixify.css'));
+  injectStyles(chrome.runtime.getURL('css/attachments.css'));
 }
 
 injectAll();

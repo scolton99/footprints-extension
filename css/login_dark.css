@@ -22,10 +22,11 @@ form[name="userform"] > div:nth-last-child(2) {
   display: none;
 }
 
-div#centralLoginContent + div,
+/* FP upgrade to 11.6.12 ruined this */
+/* div#centralLoginContent + div,
 div#mainContentTable > div:first-of-type {
   visibility: hidden;
-}
+} */
 
 div#centralLoginContent {
   background-image: none;

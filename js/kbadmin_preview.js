@@ -15,7 +15,8 @@ const check_preview = () => {
       sct.src = x.src;
       document.body.appendChild(sct);
     } else {
-      eval(x.textContent);
+      // Broken in Manifestv3
+      // eval(x.textContent);
     }
   });
 };

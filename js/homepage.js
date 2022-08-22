@@ -9,7 +9,7 @@ function injectHomepage() {
   if (!document.body) 
     return window.setTimeout(injectHomepage, 10);
 
-  injectHomepageStyles(chrome.extension.getURL('vendor/fontawesome/css/all.min.css'));
+  injectHomepageStyles(chrome.runtime.getURL('vendor/fontawesome/css/all.min.css'));
 
   chrome.storage.sync.get({
     dark: false
@@ -18,7 +18,7 @@ function injectHomepage() {
       return;
       
     window.addEventListener("DOMContentLoaded", fix_homepage);
-    injectHomepageStyles(chrome.extension.getURL('css/homepage.css'));
+    injectHomepageStyles(chrome.runtime.getURL('css/homepage.css'));
   });
 }
 
@@ -55,15 +55,15 @@ const remove_and_inject = (els, dir, fade) => {
 
 const fix_homepage = () => {
   const logo = document.querySelector("div#Logo > img");
-  logo.src = chrome.extension.getURL('img/ITSM-Brand-Dark.png');
+  logo.src = chrome.runtime.getURL('img/ITSM-Brand-Dark.png');
 
   if (!document.getElementById("splitbutton1-button"))
     return window.setTimeout(fix_homepage, 10);
 
-  document.getElementById("splitbutton1-button").style.backgroundImage = "url(\"" + chrome.extension.getURL('img/split-button-arrow-dark.png') + "\")";
+  document.getElementById("splitbutton1-button").style.backgroundImage = "url(\"" + chrome.runtime.getURL('img/split-button-arrow-dark.png') + "\")";
 
   const style = document.createElement("style");
-  style.textContent = "div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-checked { background-image: url(\"" + chrome.extension.getURL("img/menuitem_checkbox.png") + "\"); }";
+  style.textContent = "div#QuickSearchMenu div.bd > ul.first-of-type > li.yuimenuitem.yuimenuitem-checked { background-image: url(\"" + chrome.runtime.getURL("img/menuitem_checkbox.png") + "\"); }";
   document.body.appendChild(style);
 
   injectHomepage();

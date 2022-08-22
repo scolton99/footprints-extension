@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Footprints Extension",
-    "version": "4.3.1",
+    "version": "5.0.0",
     "author": "Tushar Chandra, Spencer Colton",
     "description": "Adds improvements to the BMC Footprints IT Service Manager.",
     "icons": {
@@ -9,22 +9,27 @@
         "32": "img/favicon-32x32.png",
         "128": "img/icon-128.png"
     },
-    "web_accessible_resources": [
-        "vendor/*",
-        "css/*",
-        "img/*",
-        "js/categories.js",
-        "js/auto_refresh.js",
-        "js/mock_timeout.js",
-        "js/assignees.js",
-        "js/download_categories.js",
-        "js/tabs.js"
-    ],
+    "web_accessible_resources": [{
+        "resources": [
+            "vendor/*",
+            "css/*",
+            "img/*",
+            "js/categories.js",
+            "js/auto_refresh.js",
+            "js/mock_timeout.js",
+            "js/assignees.js",
+            "js/download_categories.js",
+            "js/tabs.js"
+        ],
+        "matches": [
+            "*://*/*"
+        ]
+    }],
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false
     },
-    "browser_action": {
+    "action": {
         "default_popup": "ui.html"
     },
     "content_scripts": [{
@@ -166,7 +171,7 @@
     ],
     "omnibox": { "keyword": "fp" },
     "background": {
-        "scripts": ["js/background.js"],
-        "persistent": false
+        "service_worker": "background.js",
+        "type": "module"
     }
 }

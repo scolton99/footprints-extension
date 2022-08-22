@@ -15,8 +15,8 @@ function injectInterstitial() {
     if (document.forms.LOGIN)
       return;
     
-    injectInterstitialStyles(chrome.extension.getURL('css/interstitial.css'));
-    injectInterstitialStyles(chrome.extension.getURL('css/loading.css'));
+    injectInterstitialStyles(chrome.runtime.getURL('css/interstitial.css'));
+    injectInterstitialStyles(chrome.runtime.getURL('css/loading.css'));
   });
 }
 

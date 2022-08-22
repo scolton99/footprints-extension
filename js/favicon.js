@@ -5,21 +5,21 @@ function favicon() {
         icons[i].parentElement.removeChild(icons[i]);
     }
 
-    const img_apple57 = chrome.extension.getURL('img/apple-icon-57x57.png');
-    const img_apple60 = chrome.extension.getURL('img/apple-icon-60x60.png');
-    const img_apple72 = chrome.extension.getURL('img/apple-icon-72x72.png');
-    const img_apple76 = chrome.extension.getURL('img/apple-icon-76x76.png');
-    const img_apple114 = chrome.extension.getURL('img/apple-icon-114x114.png');
-    const img_apple120 = chrome.extension.getURL('img/apple-icon-120x120.png');
-    const img_apple144 = chrome.extension.getURL('img/apple-icon-144x144.png');
-    const img_apple152 = chrome.extension.getURL('img/apple-icon-152x152.png');
-    const img_apple180 = chrome.extension.getURL('img/apple-icon-180x180.png');
+    const img_apple57 = chrome.runtime.getURL('img/apple-icon-57x57.png');
+    const img_apple60 = chrome.runtime.getURL('img/apple-icon-60x60.png');
+    const img_apple72 = chrome.runtime.getURL('img/apple-icon-72x72.png');
+    const img_apple76 = chrome.runtime.getURL('img/apple-icon-76x76.png');
+    const img_apple114 = chrome.runtime.getURL('img/apple-icon-114x114.png');
+    const img_apple120 = chrome.runtime.getURL('img/apple-icon-120x120.png');
+    const img_apple144 = chrome.runtime.getURL('img/apple-icon-144x144.png');
+    const img_apple152 = chrome.runtime.getURL('img/apple-icon-152x152.png');
+    const img_apple180 = chrome.runtime.getURL('img/apple-icon-180x180.png');
 
-    const img_android = chrome.extension.getURL('img/android-icon-192x192.png');
+    const img_android = chrome.runtime.getURL('img/android-icon-192x192.png');
 
-    const img_favicon32 = chrome.extension.getURL('img/favicon-32x32.png');
-    const img_favicon96 = chrome.extension.getURL('img/favicon-96x96.png');
-    const img_favicon16 = chrome.extension.getURL('img/favicon-16x16.png');
+    const img_favicon32 = chrome.runtime.getURL('img/favicon-32x32.png');
+    const img_favicon96 = chrome.runtime.getURL('img/favicon-96x96.png');
+    const img_favicon16 = chrome.runtime.getURL('img/favicon-16x16.png');
 
     const apple57 = document.createElement("LINK");
     apple57.setAttribute("rel", "apple-touch-icon");
